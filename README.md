@@ -1,10 +1,10 @@
-# CivilHack 2026
+# Inno360 2026
 
 Website for the 12-hour multi-department hackathon at Erode Sengunthar Engineering College.
 
 - **Date:** 15 October 2026
 - **Venue:** ESEC Auditorium, Perundurai, Tamil Nadu
-- **Themes:** AI Hackathon (environment and sustainability) and CADathon (planning, elevation and analysis)
+- **Themes:** EcoThon (environment and sustainability; all departments) and CADathon (Civil Engineering students only; planning, structural design and construction)
 - **Registration:** [Google Form](https://forms.gle/kfuoLc2KXwoyYVcZ8)
 
 The site includes an animated civil engineering header, transparent institutional logos, a date countdown, touch effects, a CAD-style cursor, mobile navigation and registration links throughout the page. Reduced-motion preferences are supported, with a manual motion toggle.
