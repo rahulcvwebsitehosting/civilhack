@@ -28,6 +28,12 @@ Open http://localhost:4173 in your browser.
 
 Deploy the contents of `dist/` on a static web host. Publishing this repository does not deploy the website.
 
+## Deploy on Vercel
+
+Import this repository in Vercel and keep the **Root Directory** at the repository root (`./`). The included `vercel.json` selects the static-site configuration, skips installation and building, and serves `dist/`.
+
+If an existing Vercel project failed before this configuration was added, deploy the latest `main` commit. Clear any Root Directory override pointing to `dist`; the configuration already selects that output directory. No environment variables are required.
+
 ## Event details
 
 The countdown targets the beginning of 15 October in India time; it does not specify an event start time. Confirm team size, registration deadline, fee basis and prize amounts with the student coordinators listed on the website.
