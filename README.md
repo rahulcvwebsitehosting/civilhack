@@ -3,8 +3,8 @@
 Website for the 12-hour multi-department hackathon at Erode Sengunthar Engineering College.
 
 - **Date:** 15 October 2026
-- **Venue:** ESEC Auditorium, Perundurai, Tamil Nadu
-- **Themes:** EcoThon (environment and sustainability; all departments) and CADathon (Civil Engineering students only; planning, structural design and construction)
+- **Venue:** Kailaimani A. Munusamy Mudaliyar Arangam, ESEC, Perundurai, Tamil Nadu
+- **Themes:** EcoThon (environment and sustainability; all streams of engineering) and CADathon (Civil Engineering students only; planning, structural design and construction)
 - **Registration:** [Google Form](https://forms.gle/kfuoLc2KXwoyYVcZ8)
 
 The site includes an animated civil engineering header, transparent institutional logos, a date countdown, touch effects, a CAD-style cursor, mobile navigation and registration links throughout the page. Reduced-motion preferences are supported, with a manual motion toggle.
@@ -39,3 +39,7 @@ If an existing Vercel project failed before this configuration was added, deploy
 The countdown targets the beginning of 15 October in India time; it does not specify an event start time. Confirm team size, registration deadline, fee basis and prize amounts with the student coordinators listed on the website.
 
 The organizer supplied the institutional logos. Header artwork is a conceptual illustration, not a photograph of the college. Asset notes are in [LOGO-ASSETS.md](LOGO-ASSETS.md) and [HEADER-ASSET.md](HEADER-ASSET.md).
+
+## Campus gallery and visitor counter
+
+Official college photographs and student projects are credited in [CAMPUS-SOURCES.md](CAMPUS-SOURCES.md). The hosted Hits.sh badge counts page views across public HTTPS deployments, not unique people. Local previews do not increment the count. No API key or environment variable is required; if the counter service is unavailable, the rest of the site continues to work.

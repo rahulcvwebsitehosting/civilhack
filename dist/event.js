@@ -8,3 +8,7 @@ const cursor=document.querySelector('.cad-cursor');let mouseX=0,mouseY=0,queued=
 document.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||reduced)return;mouseX=e.clientX;mouseY=e.clientY;if(!queued){queued=true;requestAnimationFrame(()=>{cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';queued=false})}cursor.classList.toggle('hover',Boolean(e.target.closest('a,button,summary,input')))});
 document.addEventListener('pointerdown',e=>{if(reduced||e.button!==0)return;const ripple=document.createElement('span');ripple.className='touch-ripple';ripple.style.left=e.clientX+'px';ripple.style.top=e.clientY+'px';document.body.appendChild(ripple);ripple.addEventListener('animationend',()=>ripple.remove(),{once:true});setTimeout(()=>ripple.remove(),700)});
 document.addEventListener('pointerleave',()=>{cursor.style.opacity='0'});document.addEventListener('pointerenter',()=>{cursor.style.opacity=''});
+
+// Count live page views using a shared hosted counter; local previews do not count.
+const visitorCounter=document.getElementById('visitor-counter'),visitorStatus=document.getElementById('visitor-status');
+if(location.protocol==='https:'&&!['localhost','127.0.0.1','::1'].includes(location.hostname)){visitorCounter.addEventListener('load',()=>{visitorCounter.hidden=false;visitorStatus.hidden=true});visitorCounter.addEventListener('error',()=>{visitorStatus.textContent='Counter temporarily unavailable.'});visitorCounter.src=visitorCounter.dataset.counterSrc;}
