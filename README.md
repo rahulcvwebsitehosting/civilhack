@@ -2,7 +2,7 @@
 
 Website for the 12-hour multi-department hackathon at Erode Sengunthar Engineering College.
 
-- **Date:** 15 October 2026
+- **Date:** 15th October 2026
 - **Venue:** Kailaimani A. Munusamy Mudaliyar Arangam, ESEC, Perundurai, Tamil Nadu
 - **Themes:** EcoThon (environment and sustainability; all streams of engineering) and CADathon (Civil Engineering students only; planning, structural design and construction)
 - **Registration:** [Google Form](https://forms.gle/kfuoLc2KXwoyYVcZ8)
@@ -36,7 +36,7 @@ If an existing Vercel project failed before this configuration was added, deploy
 
 ## Event details
 
-The countdown targets the beginning of 15 October in India time; it does not specify an event start time. Confirm team size, registration deadline, fee basis and prize amounts with the student coordinators listed on the website.
+The countdown targets the beginning of 15 October in India time; it does not specify an event start time. Teams have 3 or 4 members. The fee is ₹250 per student, paid once per team (₹750 or ₹1,000). Submit one form with one payment transaction ID and proof. Confirm the registration deadline and prize amounts with the coordinators.
 
 The organizer supplied the institutional logos. Header artwork is a conceptual illustration, not a photograph of the college. Asset notes are in [LOGO-ASSETS.md](LOGO-ASSETS.md) and [HEADER-ASSET.md](HEADER-ASSET.md).
 
