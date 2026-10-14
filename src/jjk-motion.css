@@ -1,0 +1,204 @@
+/* Jujutsu choreography: slow ambient energy, deliberate reveals, explicit attacks. */
+.cursed-energy-field { position: fixed; inset: 0; z-index: 30; pointer-events: none; overflow: hidden; }
+.cursed-energy-field > i { position: absolute; bottom: -20px; left: calc(3% + var(--i) * 7%); width: 3px; height: 7px; background: #d7665d; border-radius: 50%; opacity: 0; animation: cursedEmber calc(9s + var(--i) * .6s) linear infinite; animation-delay: calc(var(--i) * -1.8s); }
+.cursed-energy-field > i:nth-child(3n) { background: #e8d8bd; width: 2px; height: 3px; }
+.motion-control { position: fixed; left: 16px; bottom: 14px; z-index: 45; display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 13px; background: #141011eb; border: 1px solid #89675f66; color: #d8c9bb; font: 400 9px var(--font-mono); letter-spacing: .12em; }
+.motion-control:hover { border-color: #d7665d; color: var(--paper); }
+.motion-control:disabled { cursor: default; }
+.hero-content > * { animation: inkEntrance .85s cubic-bezier(.2,.8,.2,1) both; }
+.hero-content > :nth-child(2) { animation-delay: .12s; }
+.hero-content > :nth-child(3) { animation-delay: .24s; }
+.hero-content > :nth-child(4) { animation-delay: .36s; }
+.hero-content > :nth-child(5) { animation-delay: .48s; }
+.hero-content > :nth-child(6) { animation-delay: .6s; }
+.domain-hero-art { overflow: hidden; }
+.domain-hero-art img { animation: coverBreathing 18s ease-in-out infinite alternate; }
+.hero-cursed-aura { position: absolute; inset: 110px 0 0 35%; z-index: -1; overflow: hidden; pointer-events: none; opacity: .36; }
+.hero-scroll svg { animation: scrollInvitation 2.2s ease-in-out infinite; }
+.hero-side-script { animation: inkEntrance 1.1s .5s both; }
+.brand-seal { animation: sealAwakening 1s .15s both; }
+.domain-trigger > span:first-child { transition: transform .4s; }
+.domain-trigger:hover > span:first-child { transform: rotate(-12deg) scale(1.16); }
+.seal-button, .jjk-btn-primary, .jjk-btn-secondary, .nav-register { overflow: hidden; }
+.seal-button::after, .jjk-btn-primary::after, .jjk-btn-secondary::after, .nav-register::after { content: ""; position: absolute; inset: -90% auto -90% -55%; width: 25%; transform: skewX(-24deg); background: #f2e9da20; transition: left .6s ease; pointer-events: none; }
+.nav-register { position: relative; }
+.seal-button:hover::after, .seal-button:focus-visible::after, .jjk-btn-primary:hover::after, .jjk-btn-secondary:hover::after, .nav-register:hover::after { left: 140%; }
+.seal-button svg:last-child, .hero-register svg, .panel-link svg { transition: transform .3s; }
+.seal-button:hover svg:last-child, .hero-register:hover svg, .technique-panel:hover .panel-link svg { transform: translate(3px,-3px); }
+.cursed-marquee { display: block; padding: 0; }
+.cursed-marquee-track { display: flex; width: max-content; animation: curtainMarquee 32s linear infinite; }
+.cursed-marquee-track > div { display: flex; align-items: center; gap: 40px; white-space: nowrap; padding: 13px 20px; }
+.jjk-reveal { opacity: 0; transform: translateY(28px) rotate(.45deg); transition: opacity .7s var(--reveal-delay,0ms), transform .7s cubic-bezier(.16,1,.3,1) var(--reveal-delay,0ms); }
+.jjk-reveal.jjk-revealed { opacity: 1; transform: none; }
+.technique-panel { transition: transform .45s, border-color .3s; }
+.technique-panel:hover { transform: translateY(-7px); border-color: var(--crimson-light); }
+.technique-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg,transparent 35%,#eb928730 50%,transparent 65%); transform: translateX(-120%); transition: transform .8s; pointer-events: none; }
+.technique-panel:hover .technique-art::after { transform: translateX(120%); }
+.panel-seal { animation: talismanHover 7s ease-in-out infinite; }
+.domain-card { transition: border-color .3s, transform .4s; }
+.domain-card:hover { transform: translateY(-5px); }
+.domain-card.is-active::before { content: ""; position: absolute; z-index: 2; inset: 5px; border: 1px solid #eb928755; pointer-events: none; animation: sealPulse 3.5s ease-in-out infinite; }
+.domain-card img { transition: transform 1s, filter .6s; }
+.domain-card:hover img { transform: scale(1.09); }
+.domain-modal { animation: panelManifest .4s cubic-bezier(.16,1,.3,1) both; }
+.domain-modal .domain-card { animation: inkEntrance .6s both; animation-delay: calc(var(--reveal-delay,0ms) + .1s); }
+.mobile-domain-menu { animation: panelManifest .3s ease both; }
+.domain-atmosphere-art { animation: atmosphereDrift 28s ease-in-out infinite alternate; }
+.cursed-talismans span { animation: talismanHover 6s ease-in-out infinite; }
+.cursed-talismans span:last-child { animation-delay: -3s; }
+.binding-vow::before { content: ""; position: absolute; z-index: -1; top: 50%; left: 50%; width: min(85vw,660px); aspect-ratio: 1; border: 1px dashed #d7665d44; border-radius: 50%; transform: translate(-50%,-50%); animation: vowOrbit 65s linear infinite; }
+.binding-vow::after { content: ""; position: absolute; z-index: -1; top: 50%; left: 50%; width: min(70vw,540px); aspect-ratio: 1; border: 1px solid #d7665d22; border-radius: 50%; transform: translate(-50%,-50%); }
+.shikigami-trigger { animation: familiarFloat 5s ease-in-out infinite; }
+
+/* Character laboratory: each sorcerer has a distinct scene and energy geometry. */
+.technique-arena { max-width: 1260px; margin: auto; padding: 20px 40px 90px; position: relative; z-index: 1; }
+.technique-arena .section-intro h2 { font-size: clamp(35px,4.4vw,60px); }
+.sorcerer-tabs { display: grid; grid-template-columns: repeat(4,1fr); border: 1px solid var(--line); border-bottom: 0; }
+.sorcerer-tabs button { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 20px; gap: 7px; background: #171112; color: var(--muted); border: 0; border-right: 1px solid var(--line); text-align: left; min-height: 112px; transition: background .3s,color .3s; }
+.sorcerer-tabs button:last-child { border-right: 0; }
+.sorcerer-tabs small { font: 400 9px var(--font-mono); letter-spacing: .12em; }
+.sorcerer-tabs strong { font: 400 clamp(19px,2vw,28px) "Anton",Impact,sans-serif; }
+.sorcerer-tabs span { font: 600 10px var(--font-serif); opacity: .65; }
+.sorcerer-tabs button::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--crimson-light); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.sorcerer-tabs button[aria-selected="true"] { background: #392326; color: var(--paper); }
+.sorcerer-tabs button[aria-selected="true"]::after, .sorcerer-tabs button:hover::after { transform: scaleX(1); }
+.sorcerer-tabs button:focus-visible { outline-offset: -5px; z-index: 1; }
+.technique-stage { --technique-color: #b5a0ce; position: relative; isolation: isolate; min-height: 590px; overflow: hidden; border: 1px solid var(--line); background: #100d10; display: flex; align-items: center; padding: 55px; }
+.stage-shadows { --technique-color: #aaa285; }
+.stage-resonance { --technique-color: #e9a060; }
+.stage-black-flash { --technique-color: #e5514d; }
+.technique-scene { position: absolute; inset: 0; z-index: -3; animation: sceneReveal .75s ease both; }
+.technique-scene picture, .technique-scene img { display: block; width: 100%; height: 100%; }
+main section[id] .technique-scene img { object-fit: cover; object-position: 64% center; filter: none; animation: sceneBreathing 14s ease-in-out infinite alternate; }
+.technique-stage::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg,#0e0b0cf5 0%,#0e0b0cb8 30%,#0e0b0c40 52%,transparent 75%),linear-gradient(0deg,#0e0b0cd9,transparent 28%); pointer-events: none; }
+.technique-stage-copy { max-width: 370px; animation: inkEntrance .6s ease both; }
+.technique-stage-copy .chapter-label { color: var(--technique-color); }
+.technique-kanji { display: block; color: var(--technique-color); font: 700 35px var(--font-serif); margin-top: 24px; letter-spacing: .08em; }
+.technique-stage h3 { margin: 12px 0 18px; font: 400 clamp(42px,5vw,70px)/1.05 "Anton",Impact,sans-serif; }
+.technique-stage-copy > p:not(.chapter-label) { font-size: 14px; line-height: 1.9; color: #d8c9bb; max-width: 290px; margin-bottom: 28px; }
+.technique-chant { position: absolute; bottom: 23px; left: 55px; right: 55px; font: 400 10px var(--font-mono); letter-spacing: .16em; color: var(--technique-color); min-height: 20px; }
+.technique-stage-stamp { position: absolute; top: 24px; right: 24px; display: grid; place-items: center; width: 50px; height: 55px; font: 700 36px var(--font-serif); color: var(--technique-color); border: 1px solid currentColor; transform: rotate(9deg); opacity: .7; }
+.technique-energy { position: absolute; inset: 0; overflow: hidden; pointer-events: none; color: var(--technique-color,#d7665d); }
+.energy-orbit { display: none; position: absolute; top: 13%; left: 43%; width: 47%; aspect-ratio: 1; border: 1px solid currentColor; border-radius: 50%; opacity: .55; box-shadow: 0 0 22px #b5a0ce22,inset 0 0 12px #b5a0ce22; }
+.energy-infinity .energy-orbit { display: block; animation: infinityOrbit 12s linear infinite; }
+.energy-infinity .orbit-two { top: 18%; left: 39%; width: 56%; animation-direction: reverse; animation-duration: 16s; border-style: dashed; }
+.energy-infinity .orbit-three { top: 24%; left: 44%; width: 43%; animation-duration: 9s; }
+.energy-strokes { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; overflow: visible; }
+.energy-strokes path { display: none; stroke: currentColor; stroke-linecap: round; }
+.energy-black-flash .stroke-one, .energy-black-flash .stroke-two { display: block; stroke-width: 2.5; stroke-dasharray: 105 900; animation: blackLightning 6s ease-in-out infinite; opacity: .75; }
+.energy-black-flash .stroke-two { animation-delay: -3s; }
+.energy-shadows .shadow-wave { display: block; stroke-width: 70; stroke: #0a070de0; animation: shadowTide 6s ease-in-out infinite alternate; }
+.energy-shadows::after { content: ""; position: absolute; inset: 55% -20% -25%; background: radial-gradient(ellipse at center,#08060ce0,transparent 65%); border-radius: 50%; animation: shadowPool 7s ease-in-out infinite; }
+.resonance-nails { display: none; position: absolute; inset: 0; }
+.energy-resonance .resonance-nails { display: block; }
+.resonance-nails i { position: absolute; width: 3px; height: 70px; background: linear-gradient(#f2e9da,#a28b7a 65%,transparent); transform: rotate(30deg); top: 16%; left: 68%; animation: nailLevitation 5s ease-in-out infinite; }
+.resonance-nails i::before { content: ""; position: absolute; top: 0; left: -5px; width: 13px; height: 3px; background: #e8d8bd; }
+.resonance-nails i:nth-child(2) { top: 50%; left: 45%; animation-delay: -1s; }
+.resonance-nails i:nth-child(3) { top: 62%; left: 89%; animation-delay: -2s; }
+.resonance-nails i:nth-child(4) { top: 18%; left: 91%; animation-delay: -3s; }
+.resonance-nails i:nth-child(5) { top: 73%; left: 66%; animation-delay: -4s; }
+.energy-resonance .stroke-one { display: block; stroke: #da685c; stroke-width: 1; stroke-dasharray: 1300; animation: resonanceThread 7s ease-in-out infinite alternate; }
+.energy-sparks { position: absolute; inset: 0; }
+.energy-sparks i { position: absolute; left: calc(43% + var(--i) * 6%); top: calc(15% + var(--i) * 8%); width: 3px; height: 3px; background: currentColor; transform: rotate(45deg); animation: techniqueSpark calc(3.2s + var(--i) * .4s) ease-in-out infinite; animation-delay: calc(var(--i) * -.8s); }
+.energy-impact { position: absolute; width: 240px; aspect-ratio: 1; top: 45%; left: 66%; border: 2px solid currentColor; border-radius: 50%; opacity: 0; }
+.is-casting .energy-impact { animation: impactRing 1.5s ease-out both; }
+.is-casting .energy-orbit { animation-duration: 1.5s; }
+.is-casting .energy-strokes .stroke-one, .is-casting .energy-strokes .stroke-two { stroke-dasharray: 1300; animation: attackStroke 1.4s ease-out both; stroke-width: 5; }
+.is-casting .resonance-nails i { animation: nailStrike 1.4s ease-out both; }
+.is-casting .energy-shadows::after { animation: shadowSurge 1.5s ease-out both; }
+.is-casting .technique-scene picture { animation: impactPush 1.5s ease-out both; }
+.is-casting .technique-chant { color: var(--paper); }
+.black-flash-challenge { position: relative; overflow: hidden; isolation: isolate; }
+main section[id] .black-flash-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .18; z-index: -2; filter: none; }
+.black-flash-challenge > .technique-energy { z-index: -1; opacity: .65; }
+.black-flash-challenge.is-casting .energy-impact { top: 50%; left: 50%; }
+.technique-arena:not(.is-in-view) .technique-energy *, .technique-arena:not(.is-in-view) .technique-scene img, .domain-hero:not(.is-in-view) .technique-energy *, .domain-hero:not(.is-in-view) .domain-hero-art img { animation-play-state: paused; }
+
+/* Domain changes expand a barrier; entering the event pulls the curtain shut. */
+.domain-manifestation { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 65; pointer-events: none; overflow: hidden; background: #10090c70; animation: manifestationFade 1.25s ease both; }
+.domain-manifestation > span { font: 800 clamp(28px,7vw,90px) var(--font-serif); color: var(--paper); max-width: 85vw; text-align: center; }
+.domain-manifestation > small { margin-top: 18px; font: 400 14px var(--font-mono); letter-spacing: .25em; text-transform: uppercase; color: var(--domain-accent); }
+.manifest-ring { position: absolute; width: 34vw; aspect-ratio: 1; border: 2px solid var(--domain-accent); border-radius: 50%; animation: domainBarrier 1.2s cubic-bezier(.2,.7,.3,1) both; }
+.manifest-ring.ring-two { width: 28vw; animation-delay: .12s; border-style: dashed; }
+.domain-transition { animation: domainCurtain 1.5s ease both; }
+.domain-transition > span { animation: domainTitle 1.4s ease both; }
+.transition-barrier { position: absolute; width: 60vw; aspect-ratio: 1; border: 1px solid #eb928766; border-radius: 50%; animation: infinityOrbit 4s linear infinite; pointer-events: none; }
+.transition-barrier.barrier-two { width: 45vw; border-style: dashed; animation-direction: reverse; }
+
+@keyframes cursedEmber { 0% { opacity: 0; transform: translate(0,0) rotate(0); } 15%,70% { opacity: .45; } 100% { opacity: 0; transform: translate(var(--drift),-105vh) rotate(180deg); } }
+@keyframes inkEntrance { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: none; } }
+@keyframes coverBreathing { from { transform: scale(1.02) translateX(-.3%); } to { transform: scale(1.075) translateX(.3%); } }
+@keyframes scrollInvitation { 0%,100% { transform: translateY(-3px); } 50% { transform: translateY(4px); } }
+@keyframes sealAwakening { from { opacity: 0; transform: rotate(-30deg) scale(.65); } to { opacity: 1; transform: rotate(-6deg) scale(1); } }
+@keyframes curtainMarquee { to { transform: translateX(-50%); } }
+@keyframes talismanHover { 0%,100% { translate: 0 -6px; rotate: -3deg; } 50% { translate: 0 7px; rotate: 3deg; } }
+@keyframes sealPulse { 0%,100% { opacity: .25; } 50% { opacity: .8; } }
+@keyframes panelManifest { from { opacity: 0; transform: translateY(-15px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes atmosphereDrift { from { transform: scale(1.03) translateX(-1%); } to { transform: scale(1.08) translateX(1%); } }
+@keyframes vowOrbit { to { transform: translate(-50%,-50%) rotate(360deg); } }
+@keyframes familiarFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes sceneReveal { from { opacity: 0; clip-path: inset(0 0 0 100%); } to { opacity: 1; clip-path: inset(0); } }
+@keyframes sceneBreathing { from { transform: scale(1.015); } to { transform: scale(1.065) translateX(-.5%); } }
+@keyframes infinityOrbit { from { transform: rotateX(60deg) rotateZ(0); } to { transform: rotateX(60deg) rotateZ(360deg); } }
+@keyframes blackLightning { 0% { stroke-dashoffset: 1200; opacity: 0; } 15%,55% { opacity: .7; } 85%,100% { stroke-dashoffset: -1100; opacity: 0; } }
+@keyframes shadowTide { from { transform: translateY(22px) scaleY(.85); } to { transform: translateY(-25px) scaleY(1.1); } }
+@keyframes shadowPool { 0%,100% { transform: scale(.9,1); opacity: .4; } 50% { transform: scale(1.15,1.2); opacity: .8; } }
+@keyframes nailLevitation { 0%,100% { transform: translateY(-8px) rotate(30deg); } 50% { transform: translateY(12px) rotate(38deg); } }
+@keyframes resonanceThread { from { stroke-dashoffset: 1300; opacity: .3; } to { stroke-dashoffset: 0; opacity: .8; } }
+@keyframes techniqueSpark { 0%,100% { opacity: 0; transform: translateY(10px) rotate(45deg) scale(.5); } 50% { opacity: .8; transform: translateY(-18px) rotate(150deg) scale(1.2); } }
+@keyframes impactRing { 0% { opacity: 0; transform: translate(-50%,-50%) scale(.1); } 20% { opacity: .9; } 100% { opacity: 0; transform: translate(-50%,-50%) scale(4); } }
+@keyframes attackStroke { 0% { stroke-dashoffset: 1300; opacity: 0; } 30% { opacity: 1; } 100% { stroke-dashoffset: -1300; opacity: 0; } }
+@keyframes nailStrike { 0% { transform: translate(0,0) rotate(30deg); opacity: 1; } 70%,100% { transform: translate(-150px,160px) rotate(30deg); opacity: 0; } }
+@keyframes shadowSurge { 0% { transform: scale(.8); } 45% { transform: scale(1.3,2); } 100% { transform: scale(1); } }
+@keyframes impactPush { 0%,100% { transform: scale(1); } 18% { transform: scale(1.05) translateX(-4px); } 35% { transform: scale(1.03) translateX(3px); } }
+@keyframes manifestationFade { 0%,100% { opacity: 0; } 20%,65% { opacity: 1; } }
+@keyframes domainBarrier { from { transform: scale(.15) rotate(-90deg); opacity: 1; } to { transform: scale(5) rotate(90deg); opacity: 0; } }
+@keyframes domainCurtain { 0% { clip-path: circle(0 at 50% 50%); } 35%,85% { clip-path: circle(100% at 50% 50%); opacity: 1; } 100% { clip-path: circle(100% at 50% 50%); opacity: 1; } }
+@keyframes domainTitle { 0% { opacity: 0; transform: scale(.6); letter-spacing: -.15em; } 45%,100% { opacity: 1; transform: scale(1); letter-spacing: .05em; } }
+
+@media (max-width: 900px) {
+  .technique-arena { padding: 20px 24px 65px; }
+  .technique-stage { min-height: 520px; padding: 36px; }
+  .technique-stage-copy { max-width: 320px; }
+  .sorcerer-tabs button { padding: 16px 13px; }
+  .sorcerer-tabs small { font-size: 8px; }
+  .technique-chant { left: 36px; right: 36px; }
+}
+@media (max-width: 600px) {
+  .motion-control { left: 10px; bottom: 10px; padding: 7px 10px; font-size: 8px; }
+  .cursed-energy-field > i:nth-child(n+8) { display: none; }
+  .hero-cursed-aura { inset: 97px 0 auto; height: 420px; opacity: .25; }
+  .cursed-marquee-track > div { font-size: 17px; padding: 11px 14px; gap: 24px; }
+  .technique-arena { padding: 0 16px 60px; }
+  .technique-arena .section-intro { padding: 0 8px; }
+  .technique-arena .section-intro h2 { font-size: 38px; }
+  .sorcerer-tabs { grid-template-columns: 1fr 1fr; }
+  .sorcerer-tabs button { min-height: 100px; border-bottom: 1px solid var(--line); }
+  .sorcerer-tabs button:nth-child(2n) { border-right: 0; }
+  .sorcerer-tabs small { font-size: 8px; letter-spacing: .07em; }
+  .sorcerer-tabs strong { font-size: 22px; }
+  .technique-stage { min-height: 660px; padding: 320px 24px 75px; align-items: flex-end; }
+  .technique-scene { bottom: auto; height: 390px; }
+  main section[id] .technique-scene img { object-position: 76% center; }
+  .technique-stage::after { background: linear-gradient(0deg,#100d10 0%,#100d10 39%,#100d10ac 52%,transparent 75%); }
+  .technique-kanji { font-size: 24px; margin-top: 15px; }
+  .technique-stage h3 { font-size: 42px; margin: 10px 0 14px; }
+  .technique-stage-copy > p:not(.chapter-label) { font-size: 13px; margin-bottom: 20px; }
+  .technique-stage-copy .chapter-label { font-size: 8px; }
+  .technique-chant { left: 24px; right: 20px; bottom: 20px; font-size: 9px; line-height: 1.7; }
+  .technique-stage-stamp { top: 16px; right: 16px; width: 35px; height: 40px; font-size: 26px; }
+  .energy-orbit { top: 25%; left: 20%; width: 80%; }
+  .energy-infinity .orbit-two { top: 20%; left: 10%; width: 100%; }
+  .energy-infinity .orbit-three { top: 34%; left: 22%; width: 70%; }
+  .transition-barrier { width: 140vw; }
+  .transition-barrier.barrier-two { width: 115vw; }
+}
+html[data-jjk-motion="paused"] *, html[data-jjk-motion="paused"] *::before, html[data-jjk-motion="paused"] *::after { animation-play-state: paused !important; }
+html[data-jjk-motion="paused"] .jjk-reveal { opacity: 1; transform: none; transition: none; }
+html[data-jjk-motion="paused"] .hero-content > *, html[data-jjk-motion="paused"] .hero-side-script, html[data-jjk-motion="paused"] .brand-seal, html[data-jjk-motion="paused"] .technique-scene, html[data-jjk-motion="paused"] .technique-stage-copy, html[data-jjk-motion="paused"] .domain-modal, html[data-jjk-motion="paused"] .domain-modal .domain-card, html[data-jjk-motion="paused"] .mobile-domain-menu { animation: none; opacity: 1; clip-path: none; }
+html[data-jjk-motion="paused"] .cursed-energy-field, html[data-jjk-motion="paused"] .domain-manifestation { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-jjk-motion="running"]) .jjk-reveal { opacity: 1; transform: none; }
+  html:not([data-jjk-motion="running"]) :is(.hero-content > *, .hero-side-script, .brand-seal, .technique-scene, .technique-stage-copy, .domain-modal, .domain-modal .domain-card, .mobile-domain-menu) { animation: none !important; opacity: 1; clip-path: none; }
+  html:not([data-jjk-motion="running"]) :is(.cursed-energy-field, .domain-manifestation) { display: none; }
+}

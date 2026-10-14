@@ -1,0 +1,171 @@
+{
+  "updatedAt": "2026-10-13",
+  "basis": "Submitted registrations; members counted from non-empty member-name fields. Payment is not verified.",
+  "colleges": [
+    {
+      "college": "NPR COLLEGE OF ENGINEERING AND TECHNOLOGY",
+      "teams": 13,
+      "members": 47
+    },
+    {
+      "college": "M KUMARASAMY COLLEGE OF ENGINEERING",
+      "teams": 14,
+      "members": 40
+    },
+    {
+      "college": "SSM INSTITUTE OF ENGINEERING AND TECHNOLOGY",
+      "teams": 6,
+      "members": 22
+    },
+    {
+      "college": "MAHENDRA ENGINEERING COLLEGE",
+      "teams": 5,
+      "members": 19
+    },
+    {
+      "college": "NANDHA ENGINEERING COLLEGE",
+      "teams": 4,
+      "members": 15
+    },
+    {
+      "college": "SHREE VENKATESHWARA HI TECH ENGINEERING COLLEGE",
+      "teams": 4,
+      "members": 15
+    },
+    {
+      "college": "K RAMAKRISHNAN COLLEGE OF ENGINEERING",
+      "teams": 3,
+      "members": 12
+    },
+    {
+      "college": "MAHENDRA INSTITUTE OF TECHNOLOGY",
+      "teams": 3,
+      "members": 10
+    },
+    {
+      "college": "DR NGP INSTITUTE OF TECHNOLOGY",
+      "teams": 3,
+      "members": 9
+    },
+    {
+      "college": "K RAMAKRISHNAN COLLEGE OF TECHNOLOGY",
+      "teams": 2,
+      "members": 7
+    },
+    {
+      "college": "SELVAM COLLEGE OF TECHNOLOGY",
+      "teams": 2,
+      "members": 7
+    },
+    {
+      "college": "ANNAPOORANA ENGINEERING COLLEGE",
+      "teams": 2,
+      "members": 6
+    },
+    {
+      "college": "VIVEKANANDA COLLEGE OF ENGINEERING FOR WOMEN",
+      "teams": 2,
+      "members": 6
+    },
+    {
+      "college": "KONGU ENGINEERING COLLEGE",
+      "teams": 2,
+      "members": 5
+    },
+    {
+      "college": "NEHRU INSTITUTE OF TECHNOLOGY",
+      "teams": 3,
+      "members": 5
+    },
+    {
+      "college": "CMS COLLEGE OF ENGINEERING",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "HINDUSTHAN COLLEGE OF ENGINEERING INGUR",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "JAI SHRIRAM ENGINEERING COLLEGE TIRUPUR",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "KGISL INSTITUTE OF TECHNOLOGY",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "KPR INSTITUTE OF ENGINEERING AND TECHNOLOGY",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "KSR COLLEGE OF ENGINEERING",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "SASURIE COLLEGE OF ENGINEERING",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "SENTHUR POLYTECHNIC",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "SYED AMMAL ENGINEERING COLLEGE",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "VELLALAR COLLEGE OF ENGINEERING AND TECHNOLOGY",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "VELLORE INSTITUTE OF TECHNOLOGY",
+      "teams": 1,
+      "members": 4
+    },
+    {
+      "college": "EXCEL ENGINEERING COLLEGE",
+      "teams": 1,
+      "members": 3
+    },
+    {
+      "college": "KALAIGNARKARUNANIDHI INSTITUTE OF TECHNOLOGY",
+      "teams": 1,
+      "members": 3
+    },
+    {
+      "college": "KANGEYAM INSTITUTE OF TECHNOLOGY",
+      "teams": 1,
+      "members": 3
+    },
+    {
+      "college": "RVS TECHNICAL CAMPUS COIMBATORE",
+      "teams": 1,
+      "members": 3
+    },
+    {
+      "college": "VSB ENGINEERING COLLEGE",
+      "teams": 2,
+      "members": 3
+    },
+    {
+      "college": "DHANALAKSHMI SRINIVASAN COLLEGE OF ENGINEERING",
+      "teams": 1,
+      "members": 1
+    },
+    {
+      "college": "VELLALAR COLLEGE OF PHARMACY",
+      "teams": 1,
+      "members": 1
+    }
+  ]
+}

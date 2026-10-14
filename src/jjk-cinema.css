@@ -1,0 +1,109 @@
+@font-face { font-family: "Bangers"; src: url("/assets/fonts/bangers.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "Rubik Glitch"; src: url("/assets/fonts/rubik-glitch.woff2") format("woff2"); font-display: swap; }
+
+/* Cut-out manga lettering, with readable narrow labels for small controls. */
+.font-barlow, .section-intro h2, .modal-heading h2, .technique-stage h3, .hero-title-sub,
+.binding-vow h2, .domain-brand, .technique-panel h3 { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: .035em; }
+.hero-title-ink { font-family: "Rubik Glitch", Impact, sans-serif; letter-spacing: -.055em; text-shadow: 5px 5px 0 #7c2428; }
+.hero-title-sub em, .section-intro em { text-shadow: 3px 3px 0 #3c161b; }
+.seal-button, .jjk-btn-primary, .jjk-btn-secondary, .nav-register { font-family: "Bangers", Impact, sans-serif; letter-spacing: .09em; font-size: 18px; }
+.sorcerer-tabs strong { font-family: "Bangers", Impact, sans-serif; font-weight: 400; letter-spacing: .04em; }
+.sorcerer-tabs { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.sorcerer-tabs strong { font-size: clamp(20px, 2.1vw, 29px); line-height: 1.1; }
+main section[id] img[src*="/assets/jjk/"], .domain-card img, .technique-art img { filter: saturate(.8) contrast(1.08); }
+.domain-hero-art, .hero-anime, .hero-side-script { translate: 0 var(--scroll-offset, 0px); }
+.anime-video { position: absolute; inset: 0; overflow: hidden; }
+.anime-video video, .anime-video > img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.hero-anime { inset: 108px 0 0 35%; z-index: -2; opacity: .95; }
+.hero-anime video { object-position: center; filter: saturate(.55) contrast(1.12); }
+.hero-ink-wash { z-index: -1; background: linear-gradient(90deg,#0e0b0c 10%,#0e0b0cf0 30%,#0e0b0c40 62%,transparent 90%),linear-gradient(0deg,#0e0b0c,transparent 24%); }
+.hero-cursed-aura { z-index: 0; opacity: .6; }
+.hero-content, .hero-side-script { z-index: 1; }
+.hero-live-tag { position: absolute; top: 145px; right: 5%; display: flex; align-items: center; gap: 10px; padding: 9px 13px; border-left: 3px solid #c83b35; background: #0e0b0cd9; font: 11px var(--font-mono); letter-spacing: .16em; }
+.hero-live-tag i { width: 7px; height: 7px; background: #e27065; border-radius: 50%; animation: liveEnergy 1.8s ease-in-out infinite; }
+.hero-live-tag span { margin-left: 12px; color: #e27065; }
+.technique-stage { min-height: 620px; }
+.technique-scene .anime-video { left: 28%; }
+.technique-scene .anime-video video { object-fit: contain; background: #090709; }
+.technique-scene > picture { opacity: .2; }
+.technique-scene::after { background: linear-gradient(90deg,#0e0b0cf7 0%,#0e0b0ce0 25%,transparent 55%),linear-gradient(0deg,#0e0b0cd9,transparent 22%); }
+.technique-stage-copy { width: 38%; transition: opacity .3s, transform .3s; }
+.technique-stage-copy h3 { font-size: clamp(38px,5vw,68px); line-height: .95; }
+.technique-kanji { font-size: 24px; }
+.technique-stage-copy > p:not(.chapter-label) { max-width: 280px; }
+.arena-sound { position: absolute; top: 18px; right: 18px; z-index: 5; display: flex; gap: 8px; align-items: center; min-height: 44px; padding: 10px 13px; border: 1px solid #8c645e; background: #0e0b0ce8; font: 11px var(--font-mono); color: #f2e9da; }
+.technique-stage.is-casting .technique-stage-copy { opacity: 0; transform: translateX(-35px); pointer-events: none; }
+.technique-stage.is-casting .anime-video { left: 0; transition: left .4s; }
+.technique-stage.is-casting .technique-scene::after { opacity: .1; }
+.technique-stage.is-casting .technique-energy { opacity: .4; }
+.attack-callout { position: absolute; inset: 0; z-index: 4; pointer-events: none; display: flex; align-items: center; justify-content: center; flex-direction: column; background: #130b0da8; animation: attackTitle 2s both; }
+.attack-callout > span { font: 900 clamp(40px,8vw,110px) var(--font-serif); color: #f2e9da; text-shadow: 5px 5px 0 #951e29; transform: rotate(-7deg); }
+.attack-callout > strong { max-width: 90%; text-align: center; margin-top: 24px; font: clamp(28px,6vw,76px)/1 "Bangers",Impact,sans-serif; letter-spacing: .03em; }
+.attack-callout i { position: absolute; inset: 0; background: repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 11deg,#e9cbb51a 11deg 12deg,transparent 12deg 25deg); animation: speedLineRush .7s ease-out both; }
+.energy-shrine .energy-strokes { opacity: .8; }
+.energy-shrine .energy-strokes path { stroke: #d64b43; stroke-width: 5; fill: none; stroke-dasharray: 850; animation: shrineCleave 3.5s ease-in-out infinite; }
+.energy-infinity .energy-orbit { border-width: 3px; box-shadow: 0 0 18px #c6a2cf65; }
+.cursed-energy-field > i { width: 4px; height: 12px; background: #e27065; }
+.cursed-scroll-progress { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: #d4554a; transform-origin: left; transform: scaleX(0); z-index: 100; box-shadow: 0 0 14px #c83b35; pointer-events: none; }
+.cursed-touch-layer { position: fixed; inset: 0; z-index: 99; overflow: hidden; pointer-events: none; }
+.cursed-touch-slash, .cursed-touch-trail { position: absolute; width: 190px; height: 4px; background: #f2e9da; box-shadow: 0 0 0 2px #c83b35,0 0 20px #e27065; animation: touchCleave .7s ease-out both; }
+.cursed-touch-slash::after { content: ""; position: absolute; inset: 0; background: inherit; transform: rotate(70deg); box-shadow: inherit; }
+.cursed-touch-trail { width: 45px; height: 2px; }
+.technique-panel:active, .domain-card:active, button:active { scale: .97; }
+.seal-button-red { animation: sealPressure 3s ease-in-out infinite; }
+.jjk-reveal { transform: translateY(55px) rotate(-2deg) scale(.96); transition-duration: .8s; }
+.jjk-reveal.jjk-revealed { transform: none; }
+.domain-card:hover img, .technique-panel:hover img { transform: scale(1.12) rotate(-1deg); }
+@keyframes liveEnergy { 50% { opacity: .35; transform: scale(.65); } }
+@keyframes attackTitle { 0% { opacity: 0; transform: scale(1.7) rotate(-5deg); } 12%,65% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.15); visibility: hidden; } }
+@keyframes speedLineRush { from { transform: scale(.5); } to { transform: scale(1.8); opacity: 0; } }
+@keyframes touchCleave { 0% { opacity: 1; transform: translate(-50%,-50%) rotate(var(--slash-rotation)) scaleX(.15); } 40% { opacity: .9; transform: translate(-50%,-50%) rotate(var(--slash-rotation)) scaleX(1); } 100% { opacity: 0; transform: translate(-50%,-50%) rotate(var(--slash-rotation)) scaleX(1.25); } }
+@keyframes shrineCleave { 0%,60%,100% { stroke-dashoffset: 850; opacity: 0; } 20%,45% { stroke-dashoffset: 0; opacity: 1; } }
+@keyframes sealPressure { 50% { box-shadow: 4px 4px 0 #491c21,0 0 20px #c83b3538; } }
+html[data-jjk-motion="paused"] .attack-callout { display: none; }
+html[data-jjk-motion="paused"] .domain-hero-art, html[data-jjk-motion="paused"] .hero-anime, html[data-jjk-motion="paused"] .hero-side-script { translate: none; }
+@media (max-width: 768px) {
+  .hero-anime { inset: 97px 0 auto; height: 350px; }
+  .hero-ink-wash { background: linear-gradient(0deg,#0e0b0c 0%,#0e0b0c 38%,transparent 72%); }
+  .hero-live-tag { top: 118px; right: 18px; font-size: 9px; }
+  .sorcerer-tabs { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .sorcerer-tabs > :last-child { grid-column: 1/-1; }
+  .sorcerer-tabs strong { font-size: 25px; }
+  .technique-stage { min-height: 690px; }
+  .technique-scene .anime-video { left: 0; height: 350px; }
+  .technique-scene::after { background: linear-gradient(0deg,#0e0b0c 5%,transparent 45%); }
+  .technique-stage-copy { width: 100%; top: 350px; padding: 25px; }
+  .technique-stage-copy h3 { font-size: 43px; }
+  .technique-stage-copy > p:not(.chapter-label) { max-width: 100%; }
+  .technique-stage.is-casting .anime-video { height: 100%; }
+  .technique-chant { font-size: 9px; padding-right: 20px; }
+  .arena-sound { top: 12px; right: 12px; }
+  .attack-callout > span { font-size: 45px; }
+  .seal-button { font-size: 17px; }
+}
+
+.domain-transition > .anime-video { z-index: -1; opacity: .6; }
+.domain-transition { isolation: isolate; }
+.domain-manifestation { animation-duration: 4s; }
+.domain-manifestation > .anime-video { opacity: .65; z-index: -1; }
+.domain-manifestation { isolation: isolate; background: #0e0b0c; }
+.domain-manifestation > span, .domain-manifestation > small { text-shadow: 3px 3px 0 #6e2524; }
+
+/* Keep the muted clip visible even when its source has a tall frame. */
+.technique-stage.is-casting .anime-video video { object-fit: contain; }
+
+.hero-voice { background: transparent; cursor: pointer; }
+.transition-skip { position:absolute; right:24px; bottom:28px; display:flex; align-items:center; gap:8px; min-height:44px; padding:10px 16px; border:1px solid #89675f; color:#f2e9da; background:#100b0dcc; font:14px "Bangers",sans-serif; letter-spacing:.1em; }
+.domain-transition > strong { font-family:"Bangers",Impact,sans-serif; text-align:center; }
+.transition-unlimited_void .transition-barrier { border-color:#c8a4e0; box-shadow:0 0 60px #9674b433,inset 0 0 60px #9674b433; }
+.transition-malevolent_shrine .transition-barrier, .manifest-malevolent_shrine .manifest-ring { border-radius:0; border-color:#e45242; border-width:2px; transform:rotate(25deg); box-shadow:0 0 60px #b4221733; animation:shrine-cleave 1.6s ease-in-out infinite alternate; }
+.transition-malevolent_shrine .barrier-two { transform:rotate(-25deg); animation-delay:-.8s; }
+.transition-malevolent_shrine > span { color:#ef6a55; text-shadow:0 0 44px #ca281d; }
+.transition-malevolent_shrine > .anime-video video { filter:contrast(1.12) saturate(1.2); }
+.manifest-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.45; z-index:-1; }
+@keyframes shrine-cleave { from { scale:.8; opacity:.3; } to { scale:1.6; opacity:1; } }
+html[data-jjk-motion="paused"] .transition-barrier { animation:none; }
+@media(max-width:600px) { .hero-actions { flex-wrap:wrap; } .domain-transition > small { text-align:center; padding:0 24px; line-height:1.7; } }
+
+.domain-manifestation { animation: manifest-enter .35s ease both; }
+@keyframes manifest-enter { from { opacity:0; } to { opacity:1; } }

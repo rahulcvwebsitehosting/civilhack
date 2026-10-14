@@ -1,45 +1,32 @@
-# Inno360 2026
+# INNO360 · The Jujutsu Chapter
 
-Website for the 12-hour multi-department hackathon at Erode Sengunthar Engineering College.
-
-- **Date:** 15th October 2026
-- **Venue:** Kailaimani A. Munusamy Mudaliyar Arangam, ESEC, Perundurai, Tamil Nadu
-- **Themes:** EcoThon (environment and sustainability; all streams of engineering) and CADathon (Civil Engineering students only; planning, structural design and construction)
-- **Registration:** [Google Form](https://forms.gle/kfuoLc2KXwoyYVcZ8)
-
-The site includes an animated civil engineering header, transparent institutional logos, a date countdown, touch effects, a CAD-style cursor, mobile navigation and registration links throughout the page. Reduced-motion preferences are supported, with a manual motion toggle.
+Jujutsu Kaisen inspired website for ESEC's INNO360 hackathon on 15 October 2026. The visual system uses manga ink, parchment, crimson seals, brush lettering, Japanese domain names, and Gojo/Sukuna artwork across the landing page and event routes.
 
 ## Run locally
 
-No build step or dependencies are required. With Python installed:
+Use Node.js 22.12+ (or 20.19+).
 
 ```sh
-python -m http.server 4173 --directory dist
+npm ci
+npm run dev
 ```
 
-Open http://localhost:4173 in your browser.
+```sh
+npm run lint   # TypeScript check
+npm run build  # Production output in dist/
+```
 
-## Files
+Bun users can install with the included `bun.lock`. The esbuild dependency matches Vite 8's supported peer range.
 
-- `dist/index.html` — event content
-- `dist/style.css`, `dist/civil.css`, `dist/event.css` — layout and styling
-- `dist/event.js` — date countdown, motion settings and pointer effects
-- `dist/assets/` — supplied logos, transparent versions and generated header artwork
+## Content and behavior
 
-Deploy the contents of `dist/` on a static web host. Publishing this repository does not deploy the website.
+- Event details, bus routes, payment instructions, and the official Google Form link live in `src/config/constants.ts`.
+- `/` is the manga cover; `/portal` and `/event` contain the complete event guide.
+- `/register` provides squad selection and registration instructions. `/status` provides reporting guidance and clearly requires coordinator verification; there is no connected registration roster API.
+- `/review` and `/reviews` show the review countdown.
+- Domain selection persists locally. Sound is opt-in. Keyboard focus, Escape dismissal, touch layouts, and reduced motion are supported.
+- The Cursed Technique Lab has four distinct character scenes and interactive Infinity, Ten Shadows, Resonance, and Black Flash effects. Ambient cursed embers, a moving chant ribbon, talisman drift, seal reveals, animated domain changes, and button slashes run throughout the site. The fixed animation control pauses movement and offers an explicit opt-in on devices requesting reduced motion. Offscreen character effects pause automatically.
+- Hosting must rewrite application routes to `index.html` for direct page visits.
 
-## Deploy on Vercel
-
-Import this repository in Vercel and keep the **Root Directory** at the repository root (`./`). The included `vercel.json` selects the static-site configuration, skips installation and building, and serves `dist/`.
-
-If an existing Vercel project failed before this configuration was added, deploy the latest `main` commit. Clear any Root Directory override pointing to `dist`; the configuration already selects that output directory. No environment variables are required.
-
-## Event details
-
-The countdown targets the beginning of 15 October in India time; it does not specify an event start time. Teams have 3 or 4 members. The fee is ₹250 per student, paid once per team (₹750 or ₹1,000). Submit one form with one payment transaction ID and proof. Confirm the registration deadline and prize amounts with the coordinators.
-
-The organizer supplied the institutional logos. Header artwork is a conceptual illustration, not a photograph of the college. Asset notes are in [LOGO-ASSETS.md](LOGO-ASSETS.md) and [HEADER-ASSET.md](HEADER-ASSET.md).
-
-## Campus gallery and visitor counter
-
-Official college photographs and student projects are credited in [CAMPUS-SOURCES.md](CAMPUS-SOURCES.md). The hosted Hits.sh badge counts page views across public HTTPS deployments, not unique people. Local previews do not increment the count. No API key or environment variable is required; if the counter service is unavailable, the rest of the site continues to work.
+See [ARTWORK.md](ARTWORK.md) for source assets and image-generation details.
+See [TECHNIQUE-ARTWORK.md](TECHNIQUE-ARTWORK.md) for the four new illustrations and their generation prompts.

@@ -1,0 +1,34 @@
+.college-community { position: relative; max-width: 1200px; margin: 0 auto; padding: 100px 32px; scroll-margin-top: 120px; }
+.community-about { display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:end; }
+.community-about h2 { font-family:"Bangers",Impact,sans-serif; font-size:clamp(48px,6vw,80px); line-height:1.05; margin:16px 0 0; letter-spacing:.02em; }
+.community-about h2 em { color:#dd534a; font-style:normal; }
+.community-about p:not(.chapter-label) { font-size:16px; line-height:1.75; color:#d8c9bb; }
+.community-link { display:inline-flex; gap:10px; align-items:center; min-height:44px; color:#f2e9da; font:14px "Bangers",sans-serif; letter-spacing:.1em; }
+.community-totals { display:grid; grid-template-columns:repeat(3,1fr); margin:40px 0 56px; border:1px solid #513b3b; background:linear-gradient(120deg,#291719,#141011); }
+.community-totals > div { position:relative; padding:30px; border-right:1px solid #513b3b; }
+.community-totals > div:last-child { border-right:0; }
+.community-totals svg,.community-mark { position:absolute; top:28px; right:28px; color:#dd534a; }
+.community-totals strong { display:block; font:64px "Bangers",sans-serif; color:#f2e9da; }
+.community-totals span:not(.community-mark) { font:12px var(--font-mono); color:#d4bd88; letter-spacing:.07em; }
+.community-directory-heading { display:flex; justify-content:space-between; align-items:center; gap:24px; }
+.community-directory-heading h3 { font:34px "Bangers",sans-serif; margin:8px 0; }
+.college-search { display:flex; align-items:center; gap:12px; border:1px solid #89675f; padding:0 16px; min-height:48px; color:#eb9287; background:#141011; }
+.college-search:focus-within { outline:2px solid #eb9287; outline-offset:3px; }
+.college-search input { background:transparent; border:0; color:#f2e9da; min-width:0; width:220px; font-size:16px; min-height:48px; outline:0; }
+.college-search input::placeholder { color:#bcaea2; }
+.community-snapshot,.community-footnote { color:#bcaea2; font-size:13px; line-height:1.65; margin:20px 0; }
+.college-roster { list-style:none; padding:0; margin:0; }
+.college-roster-row { position:relative; display:flex; gap:20px; align-items:center; padding:22px 16px; border-bottom:1px solid #513b3b; transition:background .25s,transform .25s; overflow:hidden; }
+.college-roster-row:hover { background:#2b1b1e; transform:translateX(4px); }
+.college-rank { color:#eb9287; font:20px "Bangers",sans-serif; width:28px; flex-shrink:0; }
+.college-name { flex:1; min-width:0; }
+.college-name h4 { color:#f2e9da; font-size:16px; font-weight:600; line-height:1.5; margin:0 0 4px; }
+.college-name span,.college-members span { font-size:13px; color:#bcaea2; }
+.college-members { min-width:65px; text-align:right; }
+.college-members strong { display:block; font:36px "Bangers",sans-serif; color:#d4bd88; }
+.college-power { position:absolute; bottom:0; left:0; width:var(--participation); height:2px; background:linear-gradient(90deg,#7a2525,#dd534a); transform-origin:left; animation:community-power .8s ease both; }
+@keyframes community-power { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+.community-more { margin:28px 0 0; }
+.college-empty { padding:32px 0; color:#d8c9bb; }
+html[data-jjk-motion="paused"] .college-power { animation:none; }
+@media(max-width:650px) { .college-community { padding:64px 20px; } .community-about { grid-template-columns:1fr; gap:20px; } .community-totals { margin:28px 0 36px; } .community-totals > div { padding:24px 12px; } .community-totals svg,.community-mark { display:none; } .community-totals strong { font-size:46px; } .community-totals span:not(.community-mark) { font-size:10px; letter-spacing:0; } .community-directory-heading { align-items:stretch; flex-direction:column; gap:14px; } .college-search input { width:100%; } .college-roster-row { gap:12px; padding:20px 4px; } .college-name h4 { font-size:14px; } }

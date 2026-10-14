@@ -1,0 +1,6 @@
+{
+  "name": "CODIENYCH 1.0 | 24-Hour Hackathon - Pirates of the Caribbean Edition",
+  "description": "CODIENYCH 1.0 - 24-Hour Pirates of the Caribbean Hackathon. 24 Hours of Coding, Creativity and Innovation on the High Seas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
