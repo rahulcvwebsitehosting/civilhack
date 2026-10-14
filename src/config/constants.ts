@@ -342,7 +342,7 @@ export const PREPARATION_CHECKLIST = [
 export const EVENT_TIMELINE = [
   {
     time: "08:00 AM",
-    title: "Reporting & Spot Registration Verification",
+    title: "Reporting & Registered-Team Verification",
     desc: "Teams report at Kailaimani A. Munusamy Mudaliyar Arangam, verify Google Form submission and payment receipts, and receive participant badges.",
     tag: "CHECK-IN"
   },
@@ -435,6 +435,10 @@ export const FAQS = [
   {
     q: "Which software should I install?",
     a: "For CADathon, pre-install your planning, design, and structural analysis software (such as AutoCAD, Revit, STAAD.Pro, ETABS, or SketchUp). Ask a coordinator if you have questions about accepted software."
+  },
+  {
+    q: "Is on-spot registration available?",
+    a: "No. On-spot registration is not available. Only teams that registered online before the deadline may attend."
   },
   {
     q: "How do we register as a team?",

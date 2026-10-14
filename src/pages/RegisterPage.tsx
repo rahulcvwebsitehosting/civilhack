@@ -1,3 +1,4 @@
+import { RegistrationNotice } from "../components/RegistrationNotice";
 import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { CIVIL_EVENT_CONFIG, CIVIL_THEMES } from "../config/constants";
@@ -55,6 +56,7 @@ export const RegisterPage: React.FC = () => {
       <Navbar />
 
       <main id="main-content" className="relative z-10 max-w-4xl mx-auto px-4">
+        <RegistrationNotice />
         {/* Header */}
         <div className="text-center mb-10">
           <div className="inline-block font-mono text-xs text-[#eb9287] tracking-widest uppercase mb-2">

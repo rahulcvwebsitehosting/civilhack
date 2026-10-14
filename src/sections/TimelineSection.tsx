@@ -21,7 +21,7 @@ const CIVIL_SCHEDULE_STEPS: ScheduleStep[] = [
     title: "REPORTING & REGISTRATION CHECK-IN",
     venue: "Auditorium Reception Foyer",
     tag: "VERIFICATION",
-    summary: "Participant arrival, college ID verification, Google Form submission clearance, and kit handover."
+    summary: "Check-in for teams registered in advance, college ID verification, and kit handover. No on-spot registration."
   },
   {
     id: 2,

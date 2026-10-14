@@ -29,7 +29,7 @@ interface AgendaEvent {
 const AGENDA_EVENTS: AgendaEvent[] = [
   {
     id: 1,
-    title: "Registration Check-In & Spot Clearance",
+    title: "Registered-Team Check-In",
     time: "08:00 AM – 09:00 AM",
     category: "General",
     details: "Participant verification, team ID badge allocation, and welcome morning tea."

@@ -1,3 +1,4 @@
+import { RegistrationNotice } from "../components/RegistrationNotice";
 import { CollegeCommunitySection } from "../sections/CollegeCommunitySection";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -79,6 +80,7 @@ export const HomePage: React.FC = () => {
             </div>
             {voiceError && <p role="status">Voice unavailable. Tap play to retry.</p>}
             <div className="hero-bottom-note"><span className="status-dot" /> {isRegistrationClosed() ? "REGISTRATION CLOSED" : "REGISTRATION OPEN"} <span>DEADLINE 14 OCT · 11:59 PM IST</span></div>
+            <RegistrationNotice />
           </div>
           <div className="hero-art-caption"><span>01 — THE STRONGEST</span><span lang="ja">五条悟 × 両面宿儺</span></div>
           <a className="hero-scroll" href="#techniques" aria-label="Discover the battle grounds"><ArrowDown size={17} /><span>SCROLL TO AWAKEN</span></a>

@@ -1,3 +1,4 @@
+import { RegistrationNotice } from "../components/RegistrationNotice";
 import React from "react";
 import { CIVIL_EVENT_CONFIG } from "../config/constants";
 import { DecipherText } from "../components/DecipherText";
@@ -10,6 +11,7 @@ export const AboutSection: React.FC = () => {
     <section id="about" className="relative py-16 sm:py-20 px-4 z-10 max-w-6xl mx-auto">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#dfb8af]/5 rounded-full blur-3xl pointer-events-none" />
 
+      <RegistrationNotice />
       <div className="text-center mb-12">
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#201819]/90 border border-stone-400/40 text-stone-300 font-mono text-xs tracking-widest uppercase mb-3">
           <Sparkles className="w-3.5 h-3.5" />

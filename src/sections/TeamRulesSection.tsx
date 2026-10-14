@@ -3,6 +3,7 @@ import { TeamFeeCalculator } from "../components/TeamFeeCalculator";
 import { Users, CheckCircle, ShieldCheck } from "lucide-react";
 
 const TEAM_GUIDELINES = [
+  "No on-spot registration. Only teams registered in advance may attend.",
   "Teams must consist of 3 or 4 members, including the team lead.",
   "Submit one registration per team through the official Google Form.",
   "One single team payment covers all members: ₹750 for 3 members or ₹1,000 for 4 members.",

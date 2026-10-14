@@ -35,7 +35,7 @@ export const Navbar: React.FC = () => {
   return (
     <header className="domain-navbar">
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <div className="domain-topbar"><span>ESEC (AUTONOMOUS) <span className="topbar-detail">/ DEPARTMENT OF CIVIL ENGINEERING</span></span><span>15 OCT 2026 <span className="topbar-detail">· 12 HOURS</span></span></div>
+      <div className="domain-topbar"><span>ESEC (AUTONOMOUS) <span className="topbar-detail">/ DEPARTMENT OF CIVIL ENGINEERING</span></span><span>NO ON-SPOT REGISTRATION</span></div>
       <div className="domain-nav-inner">
         <Link to="/" className="domain-brand" onClick={close} aria-label="INNO360 home"><span className="brand-seal" lang="ja" aria-hidden="true">呪</span><span>INNO<span className="brand-red">360</span><small>THE JUJUTSU CHAPTER · 2026</small></span></Link>
         <nav className="desktop-domain-nav" aria-label="Main navigation">{links.slice(0, 5).map(([label, id]) => <Link to={`/portal#${id}`} key={id} onClick={() => scrollToSection(id)}>{label}</Link>)}</nav>
