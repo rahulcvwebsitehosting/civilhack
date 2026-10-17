@@ -37,3 +37,7 @@ The theme selector contains eight actual Domain Expansions. General locations an
 | Hakari — Idle Death Gamble | https://www.youtube.com/watch?v=nGErCvPx3QQ (0–9s), fan animation by Roy Animeshon | Same fan animation's Japanese audio, explicitly labelled |
 
 Hakari is fan animation, not an official anime scene. Extracted stills supply the corresponding theme posters. The existing `-en.mp3` filename convention is retained for playback compatibility; Hakari's UI accurately identifies Japanese audio. All new voice excerpts are normalized to -18 LUFS, -2 dB true peak.
+
+### Complete domain-opening sequences
+
+Updated cuts now cover the domain call, formation and reveal rather than short loops: Gojo 129–168s and Jogo 98–129s from WR8CG04EPKM; Megumi 14–34s from PybMM91VTC8; Mahito 5–21s; Dagon 0–12s from https://www.youtube.com/watch?v=0vMyzf7O-Kw; Higuruma 49–79s; Hakari's entire 12s fan animation; Sukuna 61–80s from vmrBXvlUHb0. Casts and entrance transitions finish on the video-ended event rather than early voice completion. Ambient videos continue looping. Video/audio URLs are versioned to invalidate earlier short clips.

@@ -43,7 +43,7 @@ export const TechniqueArena: React.FC<{ initialTechnique?: number }> = ({ initia
   const cast = () => {
     if (casting) return;
     setAudioError(false);
-    playCharacterVoice(active.clip, arenaId).then(() => setCasting(false)).catch(() => { setAudioError(true); setCasting(false); });
+    playCharacterVoice(active.clip, arenaId).then(() => { if (document.documentElement.dataset.jjkMotion === "paused") setCasting(false); }).catch(() => { setAudioError(true); if (document.documentElement.dataset.jjkMotion === "paused") setCasting(false); });
     setCasting(true);
     stage.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
@@ -69,7 +69,7 @@ export const TechniqueArena: React.FC<{ initialTechnique?: number }> = ({ initia
     }}>
       <div className="technique-scene" key={active.id}>
         <picture><source type="image/webp" srcSet={`/assets/jjk/${active.image}-836.webp 836w, /assets/jjk/${active.image}-1672.webp 1672w`} sizes="(max-width: 1260px) 100vw, 1180px" /><img src={`/assets/jjk/${active.image}-1672.webp`} alt={`${active.character} performing ${active.name} in a cinematic manga scene`} width="1672" height="941" loading="lazy" /></picture>
-        <AnimeVideo key={`${active.id}-${casting}`} clip={active.clip} poster={`/assets/jjk/${active.image}-836.webp`} label={`${active.character}: ${active.name} anime sequence`} />
+        <AnimeVideo key={`${active.id}-${casting}`} clip={active.clip} poster={`/assets/jjk/${active.image}-836.webp`} label={`${active.character}: ${active.name} anime sequence`} loop={!casting} onComplete={() => setCasting(false)} />
         <TechniqueEnergy technique={active.id} />
       </div>
       <div className="technique-stage-copy" key={`copy-${active.id}`}><p className="chapter-label">ANIME SEQUENCE / {String(selected + 1).padStart(2, "0")}</p><span className="technique-kanji" lang="ja">{active.japanese}</span><h3>{active.name}</h3><p>{active.description}</p><button className="seal-button seal-button-red" onClick={cast} disabled={casting}><Zap size={18} />{casting ? "CURSED ENERGY UNLEASHED" : "RELEASE + PLAY VOICE"}<ArrowUpRight size={17} /></button></div>

@@ -26,7 +26,7 @@ export const JujutsuMotion: React.FC = () => {
   useEffect(() => {
     const syncVoice = (event: Event) => {
       const { owner, playing } = (event as CustomEvent<{ owner?: string; playing: boolean }>).detail;
-      if (owner === "domain-selection") setManifesting(enabled && playing);
+      if (owner === "domain-selection" && playing) setManifesting(enabled);
     };
     window.addEventListener("jjk-voice-state", syncVoice);
     return () => window.removeEventListener("jjk-voice-state", syncVoice);
@@ -80,7 +80,7 @@ export const JujutsuMotion: React.FC = () => {
       {Array.from({ length: 14 }, (_, i) => <i key={i} style={{ "--i": i, "--drift": `${i % 2 ? -36 : 44}px` } as React.CSSProperties} />)}
     </div>
     {manifesting && <div className={`domain-manifestation manifest-${activeDomain.id}`} aria-hidden="true" key={activeDomain.id}>
-      {clip ? <AnimeVideo clip={clip} poster={activeDomain.wallpaper} label={`${activeDomain.name} domain animation`} /> : <img className="manifest-poster" src={activeDomain.wallpaper} alt="" />}
+      {clip ? <AnimeVideo clip={clip} poster={activeDomain.wallpaper} label={`${activeDomain.name} domain animation`} loop={false} onComplete={() => setManifesting(false)} /> : <img className="manifest-poster" src={activeDomain.wallpaper} alt="" />}
       <div className="manifest-ring" /><div className="manifest-ring ring-two" />
       <span lang="ja">{activeDomain.japanese}</span><small>{activeDomain.name}</small>
     </div>}

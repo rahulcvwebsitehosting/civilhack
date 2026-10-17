@@ -7,7 +7,7 @@ let playback: { audio: HTMLAudioElement; owner?: string; cancel: () => void } | 
 export function preloadCharacterVoice(clip: CharacterClip) {
   let audio = clips.get(clip);
   if (!audio) {
-    audio = new Audio(`/assets/jjk/media/${clip}-en.mp3?v=complete-2`);
+    audio = new Audio(`/assets/jjk/media/${clip}-en.mp3?v=full-domain-3`);
     audio.preload = "auto";
     audio.hidden = true;
     audio.dataset.characterClip = clip;
