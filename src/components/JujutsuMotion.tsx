@@ -90,7 +90,7 @@ export const JujutsuMotion: React.FC = () => {
   </>;
 };
 
-export type Technique = "infinity" | "shadows" | "resonance" | "black-flash" | "shrine";
+export type Technique = "infinity" | "shadows" | "resonance" | "black-flash" | "shrine" | "coffin_iron_mountain" | "self_embodiment" | "captivating_skandha" | "deadly_sentencing" | "idle_death_gamble";
 
 /** SVG geometry is intentionally separate from the character artwork. */
 export const TechniqueEnergy: React.FC<{ technique: Technique }> = ({ technique }) => (

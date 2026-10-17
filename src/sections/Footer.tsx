@@ -110,6 +110,15 @@ export const Footer: React.FC = () => {
           </a>
         </div>
       </div>
+      <div className="creator-credit max-w-6xl mx-auto mt-8 pt-6 border-t border-[#463236]">
+        <p>A website by <strong>Rahul Shyam</strong></p>
+        <nav aria-label="Rahul Shyam social profiles">
+          <a href="https://www.linkedin.com/in/rahulshyamcivil/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href="https://github.com/rahulcvwebsitehosting" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.instagram.com/rahulcvjps/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://www.threads.com/@rahulcvjps" target="_blank" rel="noopener noreferrer">Threads ↗</a>
+        </nav>
+      </div>
     </footer>
   );
 };

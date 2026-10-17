@@ -22,3 +22,18 @@ Bangers and Rubik Glitch are self-hosted in `public/assets/fonts` under their ac
 - Browser playback state and changing video time for the opening scene and all five sorcerers.
 - Individual audio playback, shared mute, character changes, and animation pause/resume.
 - Desktop and phone layout; keyboard character tabs. Touch handlers receive horizontal swipe coordinates without cancelling native vertical scrolling.
+
+## Additional domains — 17 October 2026
+
+The theme selector contains eight actual Domain Expansions. General locations and Black Flash are no longer presented as domains. Nobara and Yuji remain in the separate technique arena.
+
+| Domain | Video source / excerpt | Voice source |
+| --- | --- | --- |
+| Megumi — Chimera Shadow Garden | Existing credited Megumi clip | Existing English dub |
+| Jogo — Coffin of the Iron Mountain | https://www.youtube.com/watch?v=WR8CG04EPKM (100–114s) | Same English dub excerpt |
+| Mahito — Self-Embodiment of Perfection | https://www.youtube.com/watch?v=CkdkJA483Bg (5–13s) | Same English dub excerpt |
+| Dagon — Horizon of the Captivating Skandha | https://www.youtube.com/watch?v=2aK-_mXT5k0 (0–10s) | https://www.youtube.com/watch?v=MvseqpoO1Q0 (6–16s), English |
+| Higuruma — Deadly Sentencing | https://www.youtube.com/watch?v=xvw93MEmeag (49–61s) | Same English dub excerpt |
+| Hakari — Idle Death Gamble | https://www.youtube.com/watch?v=nGErCvPx3QQ (0–9s), fan animation by Roy Animeshon | Same fan animation's Japanese audio, explicitly labelled |
+
+Hakari is fan animation, not an official anime scene. Extracted stills supply the corresponding theme posters. The existing `-en.mp3` filename convention is retained for playback compatibility; Hakari's UI accurately identifies Japanese audio. All new voice excerpts are normalized to -18 LUFS, -2 dB true peak.

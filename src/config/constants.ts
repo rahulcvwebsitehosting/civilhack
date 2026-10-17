@@ -32,7 +32,8 @@ export interface HackathonTheme {
 }
 
 export interface JJKDomainTheme {
-  id: "hero_sorcerers" | "unlimited_void" | "malevolent_shrine" | "shibuya_barrier" | "tokyo_high" | "black_flash_squad";
+  id: "hero_sorcerers" | "unlimited_void" | "malevolent_shrine" | "shibuya_barrier" | "tokyo_high" | "black_flash_squad" | "chimera_shadow_garden" | "coffin_iron_mountain" | "self_embodiment" | "captivating_skandha" | "deadly_sentencing" | "idle_death_gamble";
+  mediaNote?: string;
   name: string;
   japanese: string;
   user: string;
@@ -45,18 +46,6 @@ export interface JJKDomainTheme {
 }
 
 export const JJK_DOMAIN_THEMES: JJKDomainTheme[] = [
-  {
-    "id": "hero_sorcerers",
-    "name": "Special Grade Showdown",
-    "japanese": "最強の対決",
-    "user": "Gojo & Sukuna",
-    "wallpaper": "/assets/jjk/domain-clash-1672.webp",
-    "accent": "#d7665d",
-    "secondaryAccent": "#e8d8bd",
-    "glow": "rgba(200,59,53,0.2)",
-    "description": "Two overwhelming forces. One battlefield. Step into a clash of limitless creativity and relentless ambition.",
-    "cursedTechnique": "Limitless × Shrine"
-  },
   {
     "id": "unlimited_void",
     "name": "Unlimited Void",
@@ -82,40 +71,82 @@ export const JJK_DOMAIN_THEMES: JJKDomainTheme[] = [
     "cursedTechnique": "Cleave & Dismantle"
   },
   {
-    "id": "shibuya_barrier",
-    "name": "Shibuya Curtain",
-    "japanese": "渋谷事変",
-    "user": "Shibuya Incident",
-    "wallpaper": "/assets/jjk/jjk-shibuya-incident.jpg",
-    "accent": "#a592ad",
+    "id": "chimera_shadow_garden",
+    "name": "Chimera Shadow Garden",
+    "japanese": "嵌合暗翳庭",
+    "user": "Megumi Fushiguro",
+    "wallpaper": "/assets/jjk/megumi-shadows-836.webp",
+    "accent": "#688b9d",
     "secondaryAccent": "#e8d8bd",
-    "glow": "rgba(165,146,173,0.2)",
-    "description": "The curtain has fallen over Shibuya. Stay sharp, trust your squad, and solve the challenge together.",
-    "cursedTechnique": "Curtain Barrier"
+    "glow": "#688b9d33",
+    "description": "An incomplete domain. Shadows flood the ground and shikigami take shape.",
+    "cursedTechnique": "Ten Shadows",
+    "mediaNote": "English dub"
   },
   {
-    "id": "tokyo_high",
-    "name": "Jujutsu High",
-    "japanese": "東京都立呪術高等専門学校",
-    "user": "Tokyo Jujutsu High",
-    "wallpaper": "/assets/jjk/jjk-tokyo-high.jpg",
-    "accent": "#c5a56f",
+    "id": "coffin_iron_mountain",
+    "name": "Coffin of the Iron Mountain",
+    "japanese": "蓋棺鉄囲山",
+    "user": "Jogo",
+    "wallpaper": "/assets/jjk/jogo-mountain-836.webp",
+    "accent": "#ed8950",
     "secondaryAccent": "#e8d8bd",
-    "glow": "rgba(197,165,111,0.2)",
-    "description": "A sanctuary for the next generation. Prepare your tools and refine your technique before stepping into battle.",
-    "cursedTechnique": "Barrier Technique"
+    "glow": "#ed895033",
+    "description": "A volcanic barrier filled with molten rock and scorching heat.",
+    "cursedTechnique": "Disaster Flames",
+    "mediaNote": "English dub"
   },
   {
-    "id": "black_flash_squad",
-    "name": "Black Flash",
-    "japanese": "黒閃",
-    "user": "Yuji Itadori",
-    "wallpaper": "/assets/jjk/yuji-black-flash-1672.webp",
-    "accent": "#d9a4a0",
+    "id": "self_embodiment",
+    "name": "Self-Embodiment of Perfection",
+    "japanese": "自閉円頓裹",
+    "user": "Mahito",
+    "wallpaper": "/assets/jjk/mahito-perfection-836.webp",
+    "accent": "#c2a6eb",
     "secondaryAccent": "#e8d8bd",
-    "glow": "rgba(217,164,160,0.2)",
-    "description": "When intent and action align, the impossible becomes possible. Build with the unbreakable resolve of your squad.",
-    "cursedTechnique": "Black Flash"
+    "glow": "#c2a6eb33",
+    "description": "A barrier of hands brings every soul within reach.",
+    "cursedTechnique": "Idle Transfiguration",
+    "mediaNote": "English dub"
+  },
+  {
+    "id": "captivating_skandha",
+    "name": "Horizon of the Captivating Skandha",
+    "japanese": "蕩蘊平線",
+    "user": "Dagon",
+    "wallpaper": "/assets/jjk/dagon-skandha-836.webp",
+    "accent": "#69ccdc",
+    "secondaryAccent": "#e8d8bd",
+    "glow": "#69ccdc33",
+    "description": "A tropical shore hides an endless swarm of shikigami.",
+    "cursedTechnique": "Disaster Tides",
+    "mediaNote": "English dub"
+  },
+  {
+    "id": "deadly_sentencing",
+    "name": "Deadly Sentencing",
+    "japanese": "誅伏賜死",
+    "user": "Hiromi Higuruma",
+    "wallpaper": "/assets/jjk/higuruma-sentencing-836.webp",
+    "accent": "#d3b480",
+    "secondaryAccent": "#e8d8bd",
+    "glow": "#d3b48033",
+    "description": "Enter the courtroom. Judgeman weighs the evidence.",
+    "cursedTechnique": "Judgeman",
+    "mediaNote": "English dub"
+  },
+  {
+    "id": "idle_death_gamble",
+    "name": "Idle Death Gamble",
+    "japanese": "坐殺博徒",
+    "user": "Kinji Hakari",
+    "wallpaper": "/assets/jjk/hakari-gamble-836.webp",
+    "accent": "#de92db",
+    "secondaryAccent": "#e8d8bd",
+    "glow": "#de92db33",
+    "description": "A pachinko domain where a jackpot changes everything.",
+    "cursedTechnique": "Private Pure Love Train",
+    "mediaNote": "Fan animation · Japanese audio"
   }
 ];
 

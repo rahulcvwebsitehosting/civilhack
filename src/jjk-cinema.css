@@ -107,3 +107,8 @@ html[data-jjk-motion="paused"] .transition-barrier { animation:none; }
 
 .domain-manifestation { animation: manifest-enter .35s ease both; }
 @keyframes manifest-enter { from { opacity:0; } to { opacity:1; } }
+.domain-media-note{font:11px/1.6 monospace!important;letter-spacing:.04em!important;color:#e4d6c7!important;margin-top:8px;display:block}
+.creator-credit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;font:13px/1.7 monospace}
+.creator-credit p{margin:0}.creator-credit strong{color:#f0dfca}.creator-credit nav{display:flex;flex-wrap:wrap;gap:8px}
+.creator-credit a{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid #513b3b;color:#dfb8af}
+.creator-credit a:hover{background:#291a1d;color:#fff}.creator-credit a:focus-visible{outline:2px solid #eb9287;outline-offset:4px}

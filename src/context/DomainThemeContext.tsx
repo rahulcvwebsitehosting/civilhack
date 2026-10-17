@@ -9,6 +9,12 @@ export const domainClip = (id: JJKDomainTheme["id"]): CharacterClip | null => {
     case "black_flash_squad": return "yuji-black-flash";
     case "unlimited_void":
     case "hero_sorcerers": return "gojo-void";
+    case "chimera_shadow_garden": return "megumi-garden";
+    case "coffin_iron_mountain": return "jogo-mountain";
+    case "self_embodiment": return "mahito-perfection";
+    case "captivating_skandha": return "dagon-skandha";
+    case "deadly_sentencing": return "higuruma-sentencing";
+    case "idle_death_gamble": return "hakari-gamble";
     default: return null;
   }
 };

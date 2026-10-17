@@ -1,6 +1,6 @@
 import { isSoundEnabled } from "./cyberSound";
 
-export type CharacterClip = "gojo-void" | "sukuna-shrine" | "megumi-garden" | "nobara-resonance" | "yuji-black-flash";
+export type CharacterClip = "gojo-void" | "sukuna-shrine" | "megumi-garden" | "nobara-resonance" | "yuji-black-flash" | "jogo-mountain" | "mahito-perfection" | "dagon-skandha" | "higuruma-sentencing" | "hakari-gamble";
 const clips = new Map<string, HTMLAudioElement>();
 let playback: { audio: HTMLAudioElement; owner?: string; cancel: () => void } | null = null;
 
