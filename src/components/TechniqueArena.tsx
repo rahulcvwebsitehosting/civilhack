@@ -2,7 +2,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { ArrowUpRight, Zap, Volume2, VolumeX } from "lucide-react";
 import { Technique, TechniqueEnergy } from "./JujutsuMotion";
 import { isSoundEnabled, toggleMute } from "../utils/cyberSound";
-import { playCharacterVoice, stopCharacterVoice, preloadCharacterVoice, type CharacterClip } from "../utils/characterAudio";
+import type { CharacterClip } from "../utils/characterAudio";
 import { AnimeVideo } from "./AnimeVideo";
 
 const techniques: { id: Technique; character: string; name: string; japanese: string; image: string; clip: CharacterClip; description: string; chant: string }[] = [
@@ -31,11 +31,9 @@ export const TechniqueArena: React.FC<{ initialTechnique?: number }> = ({ initia
   useEffect(() => {
     const sync = () => setSound(isSoundEnabled());
     window.addEventListener("jjk-sound-change", sync);
-    return () => { stopCharacterVoice(arenaId); window.removeEventListener("jjk-sound-change", sync); };
+    return () => window.removeEventListener("jjk-sound-change", sync);
   }, []);
-  useEffect(() => { preloadCharacterVoice(active.clip); }, [active.clip]);
   const select = (index: number) => {
-    stopCharacterVoice(arenaId);
     setAudioError(false);
     setCasting(false);
     setSelected(index);
@@ -43,7 +41,6 @@ export const TechniqueArena: React.FC<{ initialTechnique?: number }> = ({ initia
   const cast = () => {
     if (casting) return;
     setAudioError(false);
-    playCharacterVoice(active.clip, arenaId).then(() => { if (document.documentElement.dataset.jjkMotion === "paused") setCasting(false); }).catch(() => { setAudioError(true); if (document.documentElement.dataset.jjkMotion === "paused") setCasting(false); });
     setCasting(true);
     stage.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
@@ -69,13 +66,13 @@ export const TechniqueArena: React.FC<{ initialTechnique?: number }> = ({ initia
     }}>
       <div className="technique-scene" key={active.id}>
         <picture><source type="image/webp" srcSet={`/assets/jjk/${active.image}-836.webp 836w, /assets/jjk/${active.image}-1672.webp 1672w`} sizes="(max-width: 1260px) 100vw, 1180px" /><img src={`/assets/jjk/${active.image}-1672.webp`} alt={`${active.character} performing ${active.name} in a cinematic manga scene`} width="1672" height="941" loading="lazy" /></picture>
-        <AnimeVideo key={`${active.id}-${casting}`} clip={active.clip} poster={`/assets/jjk/${active.image}-836.webp`} label={`${active.character}: ${active.name} anime sequence`} loop={!casting} onComplete={() => setCasting(false)} />
+        <AnimeVideo key={`${active.id}-${casting}`} clip={active.clip} poster={`/assets/jjk/${active.image}-836.webp`} label={`${active.character}: ${active.name} anime sequence`} loop={!casting} audible={casting} onComplete={() => setCasting(false)} onInterrupted={() => setCasting(false)} onFailure={() => setAudioError(true)} />
         <TechniqueEnergy technique={active.id} />
       </div>
       <div className="technique-stage-copy" key={`copy-${active.id}`}><p className="chapter-label">ANIME SEQUENCE / {String(selected + 1).padStart(2, "0")}</p><span className="technique-kanji" lang="ja">{active.japanese}</span><h3>{active.name}</h3><p>{active.description}</p><button className="seal-button seal-button-red" onClick={cast} disabled={casting}><Zap size={18} />{casting ? "CURSED ENERGY UNLEASHED" : "RELEASE + PLAY VOICE"}<ArrowUpRight size={17} /></button></div>
       <button className="arena-sound" onClick={toggleMute} aria-label={sound ? "Mute character voices" : "Enable character voices"}>{sound ? <Volume2 size={17} /> : <VolumeX size={17} />} {sound ? "VOICE ON" : "VOICE OFF"}</button>
       {casting && <div className="attack-callout" aria-hidden="true"><span lang="ja">{active.japanese}</span><strong>{active.name}</strong><i /></div>}
-      <div className="technique-chant" role="status" aria-live="polite">{audioError ? "VOICE UNAVAILABLE · TAP AGAIN TO RETRY" : casting ? active.chant : active.id === "idle_death_gamble" ? "FAN ANIMATION · JAPANESE AUDIO" : "ENGLISH DUB · RELEASE TO HEAR THEIR VOICE"}</div>
+      <div className="technique-chant" role="status" aria-live="polite">{audioError ? "VOICE UNAVAILABLE · TAP AGAIN TO RETRY" : casting ? active.chant : active.id === "idle_death_gamble" ? "FAN ANIMATION · JAPANESE AUDIO" : active.id === "captivating_skandha" ? "ORIGINAL SCENE AUDIO · VIDEO + SOUND" : "ENGLISH DUB · VIDEO + SOUND"}</div>
       <span className="technique-stage-stamp" aria-hidden="true" lang="ja">呪</span>
     </div>
   </section>;

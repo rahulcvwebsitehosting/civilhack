@@ -7,9 +7,9 @@ import { domainClip, useDomainTheme } from "../context/DomainThemeContext";
 /** Decorative movement stays optional and never intercepts navigation. */
 export const JujutsuMotion: React.FC = () => {
   const { pathname } = useLocation();
-  const { activeDomain } = useDomainTheme();
+  const { activeDomain, manifestRequest } = useDomainTheme();
   const clip = domainClip(activeDomain.id);
-  const previousDomain = useRef(activeDomain.id);
+
   const [manifesting, setManifesting] = useState(false);
   const [paused, setPaused] = useState(() => {
     try { return localStorage.getItem("jjk_motion_paused_v2") === "true"; } catch { return false; }
@@ -24,23 +24,8 @@ export const JujutsuMotion: React.FC = () => {
   }, [enabled, paused]);
 
   useEffect(() => {
-    const syncVoice = (event: Event) => {
-      const { owner, playing } = (event as CustomEvent<{ owner?: string; playing: boolean }>).detail;
-      if (owner === "domain-selection" && playing) setManifesting(enabled);
-    };
-    window.addEventListener("jjk-voice-state", syncVoice);
-    return () => window.removeEventListener("jjk-voice-state", syncVoice);
-  }, [enabled]);
-
-  useEffect(() => {
-    if (!enabled) { setManifesting(false); previousDomain.current = activeDomain.id; return; }
-    if (previousDomain.current === activeDomain.id) return;
-    previousDomain.current = activeDomain.id;
-    if (clip) return; // The voice start/end events control actual technique scenes.
-    setManifesting(true);
-    const timer = window.setTimeout(() => setManifesting(false), 3000);
-    return () => window.clearTimeout(timer);
-  }, [activeDomain.id, enabled, clip]);
+    if (manifestRequest > 0 && clip) setManifesting(true);
+  }, [manifestRequest, clip]);
 
   useEffect(() => {
     if (!enabled) return;
@@ -79,8 +64,8 @@ export const JujutsuMotion: React.FC = () => {
     <div className="cursed-energy-field" aria-hidden="true">
       {Array.from({ length: 14 }, (_, i) => <i key={i} style={{ "--i": i, "--drift": `${i % 2 ? -36 : 44}px` } as React.CSSProperties} />)}
     </div>
-    {manifesting && <div className={`domain-manifestation manifest-${activeDomain.id}`} aria-hidden="true" key={activeDomain.id}>
-      {clip ? <AnimeVideo clip={clip} poster={activeDomain.wallpaper} label={`${activeDomain.name} domain animation`} loop={false} onComplete={() => setManifesting(false)} /> : <img className="manifest-poster" src={activeDomain.wallpaper} alt="" />}
+    {manifesting && <div className={`domain-manifestation manifest-${activeDomain.id}`} role="region" aria-label={`${activeDomain.name} cinematic`} key={`${activeDomain.id}-${manifestRequest}`}>
+      {clip ? <AnimeVideo clip={clip} poster={activeDomain.wallpaper} label={`${activeDomain.name} domain animation`} loop={false} audible onComplete={() => setManifesting(false)} onInterrupted={() => setManifesting(false)} /> : <img className="manifest-poster" src={activeDomain.wallpaper} alt="" />}
       <div className="manifest-ring" /><div className="manifest-ring ring-two" />
       <span lang="ja">{activeDomain.japanese}</span><small>{activeDomain.name}</small>
     </div>}

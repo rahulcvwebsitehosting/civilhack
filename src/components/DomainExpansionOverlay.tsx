@@ -5,7 +5,7 @@ import { useDomainTheme } from "../context/DomainThemeContext";
 
 export const GlobalDomainExpansionOverlay: React.FC = () => {
   const { activeDomain, setActiveDomain, isDomainOverlayOpen, closeDomainOverlay } = useDomainTheme();
-  return <DomainExpansionOverlay isOpen={isDomainOverlayOpen} activeDomain={activeDomain} onSelectDomain={setActiveDomain} onClose={closeDomainOverlay} />;
+  return <DomainExpansionOverlay isOpen={isDomainOverlayOpen} activeDomain={activeDomain} onSelectDomain={domain => { setActiveDomain(domain); closeDomainOverlay(); }} onClose={closeDomainOverlay} />;
 };
 
 interface DomainExpansionOverlayProps {

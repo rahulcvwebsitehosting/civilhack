@@ -41,3 +41,9 @@ Hakari is fan animation, not an official anime scene. Extracted stills supply th
 ### Complete domain-opening sequences
 
 Updated cuts now cover the domain call, formation and reveal rather than short loops: Gojo 129–168s and Jogo 98–129s from WR8CG04EPKM; Megumi 14–34s from PybMM91VTC8; Mahito 5–21s; Dagon 0–12s from https://www.youtube.com/watch?v=0vMyzf7O-Kw; Higuruma 49–79s; Hakari's entire 12s fan animation; Sukuna 61–80s from vmrBXvlUHb0. Casts and entrance transitions finish on the video-ended event rather than early voice completion. Ambient videos continue looping. Video/audio URLs are versioned to invalidate earlier short clips.
+
+### Synchronized playback — 17 October 2026
+
+All ten characters now use `*-synced.mp4` files with video and AAC audio cut from the **same original scene and timestamps**. Separate soundboard MP3 playback is no longer used by the interface. Both streams share the native video player's buffering, pause, seek and end timeline. Gojo, Sukuna, Megumi, Jogo, Mahito, Higuruma and Hakari retain the full-opening ranges above. Dagon now uses the original scene soundtrack from 0vMyzf7O-Kw rather than overlaying a separate English voice recording; its UI says Original scene audio. Nobara uses the English dub from https://www.youtube.com/watch?v=3LURkU25248 (15–49s), replacing the soundboard/GIF pairing. Yuji uses https://www.youtube.com/watch?v=pUPd-bHWVUA (18–25s). Hakari remains explicitly labelled fan animation / Japanese audio.
+
+The foreground player is exclusive, muted ambient loops cannot acquire sound, and the shared mute changes the actual video track without restarting it. Foreground cinematics are user-initiated; loading and browser gesture fallback controls are included. The domain selector closes when a domain is chosen so the complete cinematic is visible from its beginning.

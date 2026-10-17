@@ -120,7 +120,7 @@ export const JJK_DOMAIN_THEMES: JJKDomainTheme[] = [
     "glow": "#69ccdc33",
     "description": "A tropical shore hides an endless swarm of shikigami.",
     "cursedTechnique": "Disaster Tides",
-    "mediaNote": "English dub"
+    "mediaNote": "Original scene audio"
   },
   {
     "id": "deadly_sentencing",

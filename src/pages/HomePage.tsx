@@ -1,6 +1,6 @@
 import { RegistrationNotice } from "../components/RegistrationNotice";
 import { CollegeCommunitySection } from "../sections/CollegeCommunitySection";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowDown, ArrowUpRight, Bus, ChevronRight, Volume2 } from "lucide-react";
 import { CIVIL_EVENT_CONFIG, JJK_DOMAIN_THEMES, isRegistrationClosed } from "../config/constants";
@@ -9,61 +9,47 @@ import { Navbar } from "../components/Navbar";
 import { Footer } from "../sections/Footer";
 import { TechniqueEnergy } from "../components/JujutsuMotion";
 import { AnimeVideo } from "../components/AnimeVideo";
-import { playCharacterVoice, preloadCharacterVoice, stopCharacterVoice } from "../utils/characterAudio";
+
 import { isSoundEnabled, toggleMute } from "../utils/cyberSound";
 import { TechniqueArena } from "../components/TechniqueArena";
 
 export const HomePage: React.FC = () => {
   const { activeDomain, setActiveDomain, openDomainOverlay } = useDomainTheme();
   const [expanding, setExpanding] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const navigate = useNavigate();
-  useEffect(() => () => clearTimeout(timer.current), []);
 
   const entryClip = domainClip(activeDomain.id);
   const entryName = activeDomain.id === "hero_sorcerers" ? "Unlimited Void" : activeDomain.name;
   const entryPoster = activeDomain.id === "hero_sorcerers" ? "/assets/jjk/gojo-infinity-836.webp" : activeDomain.wallpaper;
   const [introPlaying, setIntroPlaying] = useState(false);
   const [voiceError, setVoiceError] = useState(false);
-  const mounted = useRef(true);
-  useEffect(() => {
-    mounted.current = true;
-    return () => { mounted.current = false; stopCharacterVoice("home-intro"); stopCharacterVoice("home-entry"); };
-  }, []);
-  useEffect(() => { if (entryClip) preloadCharacterVoice(entryClip); }, [entryClip]);
+  const [introRequest, setIntroRequest] = useState(0);
   const playIntro = () => {
     if (!entryClip) return;
     setVoiceError(false);
-    if (introPlaying) { stopCharacterVoice("home-intro"); setIntroPlaying(false); return; }
-    if (!isSoundEnabled()) toggleMute();
-    setIntroPlaying(true);
-    playCharacterVoice(entryClip, "home-intro").catch(() => { if (mounted.current) setVoiceError(true); }).finally(() => { if (mounted.current) setIntroPlaying(false); });
+    if (!introPlaying && !isSoundEnabled()) toggleMute();
+    setIntroRequest(value => value + 1);
+    setIntroPlaying(value => !value);
   };
   const enterDomain = () => {
     if (expanding) return;
+    setIntroPlaying(false);
     setExpanding(true);
     setVoiceError(false);
-    const start = performance.now();
-    const complete = () => {
-      if (!mounted.current) return;
-      const minimum = document.documentElement.dataset.jjkMotion === "paused" ? 0 : 3000;
-      timer.current = setTimeout(() => navigate("/portal"), Math.max(0, minimum - (performance.now() - start)));
-    };
-    if (entryClip) playCharacterVoice(entryClip, "home-entry").then(() => { if (document.documentElement.dataset.jjkMotion === "paused") complete(); }).catch(() => { if (document.documentElement.dataset.jjkMotion === "paused") complete(); });
-    else complete();
+    if (!entryClip) navigate("/portal");
   };
 
   return (
     <div className="domain-home">
       <Navbar />
-      {expanding && <div className={`domain-transition transition-${activeDomain.id}`} role="status">{entryClip && <AnimeVideo clip={entryClip} poster={entryPoster} label={`Entering ${entryName}`} loop={false} onComplete={() => { stopCharacterVoice("home-entry"); navigate("/portal"); }} />}<div className="transition-barrier barrier-one" aria-hidden="true" /><div className="transition-barrier barrier-two" aria-hidden="true" /><span lang="ja">{entryClip === "sukuna-shrine" ? "伏魔御厨子" : entryClip === "gojo-void" ? "無量空処" : activeDomain.japanese}</span><strong>{entryName}</strong><small>DOMAIN EXPANSION · {activeDomain.user}</small><button className="transition-skip" onClick={() => { stopCharacterVoice("home-entry"); clearTimeout(timer.current); navigate("/portal"); }}>SKIP INTRO <ArrowUpRight size={16} /></button></div>}
+      {expanding && <div className={`domain-transition transition-${activeDomain.id}`} role="status">{entryClip && <AnimeVideo clip={entryClip} poster={entryPoster} label={`Entering ${entryName}`} loop={false} audible onComplete={() => navigate("/portal")} />}<div className="transition-barrier barrier-one" aria-hidden="true" /><div className="transition-barrier barrier-two" aria-hidden="true" /><span lang="ja">{entryClip === "sukuna-shrine" ? "伏魔御厨子" : entryClip === "gojo-void" ? "無量空処" : activeDomain.japanese}</span><strong>{entryName}</strong><small>DOMAIN EXPANSION · {activeDomain.user}</small><button className="transition-skip" onClick={() => navigate("/portal")}>SKIP INTRO <ArrowUpRight size={16} /></button></div>}
       <main id="main-content">
         <section className="domain-hero" aria-labelledby="hero-title">
           <picture className="domain-hero-art">
             <source type="image/webp" srcSet="/assets/jjk/domain-clash-836.webp 836w, /assets/jjk/domain-clash-1672.webp 1672w" sizes="100vw" />
             <img src="/assets/jjk/domain-clash-master.png" alt="Satoru Gojo and Ryomen Sukuna forming domain expansion hand seals beneath a crimson moon, illustrated in manga ink" width="1672" height="941" fetchPriority="high" />
           </picture>
-          {entryClip && <AnimeVideo key={entryClip} className="hero-anime" clip={entryClip} poster={entryPoster} label={`${entryName} cinematic`} />}
+          {entryClip && <AnimeVideo key={entryClip} className="hero-anime" clip={entryClip} poster={entryPoster} label={`${entryName} cinematic`} audible={introPlaying && !expanding} playbackKey={introRequest} loop={!introPlaying} onComplete={() => setIntroPlaying(false)} onInterrupted={() => setIntroPlaying(false)} onFailure={() => setVoiceError(true)} />}
           <div className="hero-live-tag"><i /> ANIME IN MOTION <span lang="ja">領域展開</span></div>
           <div className="hero-cursed-aura"><TechniqueEnergy technique="black-flash" /></div>
           <div className="hero-ink-wash" aria-hidden="true" />
