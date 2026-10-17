@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" fill="#0e0b0c"/><g fill="none" stroke="#eb9287" stroke-width="2"><path d="M6 5h36v38H6zM10 9h28v30H10z"/><path d="M17 14h14M24 14v19M16 21h16M18 21v7l-4 6M30 21v7l4 6M18 34h12" stroke-linecap="square"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="4096" height="4096" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+<title id="title">Sukuna-inspired four-eyed curse seal</title>
+<defs>
+<radialGradient id="bg"><stop stop-color="#3b0b16"/><stop offset="1" stop-color="#09080c"/></radialGradient>
+<linearGradient id="bone" x2="0" y2="1"><stop stop-color="#fff0db"/><stop offset="1" stop-color="#bd8b7c"/></linearGradient>
+<linearGradient id="blood" x2="1" y2="1"><stop stop-color="#ffac83"/><stop offset=".45" stop-color="#ff334d"/><stop offset="1" stop-color="#980d32"/></linearGradient>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3"/></filter>
+<style>.seal{transform-origin:128px 128px;animation:turn 32s linear infinite}.eyes{animation:awaken 3s ease-in-out infinite}.slash{stroke-dasharray:290;animation:cleave 5s ease-in-out infinite}@keyframes turn{to{transform:rotate(360deg)}}@keyframes awaken{0%,100%{opacity:.75}50%{opacity:1}}@keyframes cleave{0%,65%,100%{stroke-dashoffset:290;opacity:0}75%,90%{stroke-dashoffset:0;opacity:.8}}@media(prefers-reduced-motion:reduce){.seal,.eyes,.slash{animation:none}.slash{opacity:0}}</style>
+</defs>
+<rect width="256" height="256" rx="58" fill="url(#bg)"/>
+<rect x="6" y="6" width="244" height="244" rx="52" fill="none" stroke="#9b233b" stroke-width="3"/>
+<g class="seal" fill="none" stroke="#ca2545" opacity=".45"><circle cx="128" cy="128" r="108" stroke-width="2" stroke-dasharray="28 11 3 11"/><path d="M128 14v15m0 198v15M14 128h15m198 0h15M47 47l11 11m140 140 11 11M47 209l11-11M198 58l11-11" stroke-width="4"/></g>
+<path d="M58 87 48 58 76 65 72 32 102 51 111 23 130 45 151 25 159 52 188 36 181 68 209 59 195 91Z" fill="url(#blood)"/>
+<path d="M67 81 78 66 108 72 128 63 149 72 179 65 191 83 185 154 171 185 128 220 85 185 71 154Z" fill="url(#bone)"/>
+<path d="m79 84 20-8 29 10 29-10 22 8-13 12-38-9-37 9Z" fill="#171018"/>
+<path d="m113 72 15 6 15-6-4 32-11 12-11-12Z" fill="#171018"/><path d="m118 88 10 5 10-5-10 17Z" fill="#d22644"/>
+<g fill="#170e16"><path d="m74 107 35 9-11 12-22-9Zm108 0-35 9 11 12 22-9ZM77 135l27 9-9 11-16-9Zm102 0-27 9 9 11 16-9Z"/></g>
+<g class="eyes" fill="#ff2448" filter="url(#glow)"><path d="m78 110 29 8-12 7-17-8Zm100 0-29 8 12 7 17-8ZM81 138l21 7-9 7-12-7Zm94 0-21 7 9 7 12-7Z"/></g>
+<g class="eyes" fill="url(#blood)"><path d="m78 110 29 8-12 7-17-8Zm100 0-29 8 12 7 17-8ZM81 138l21 7-9 7-12-7Zm94 0-21 7 9 7 12-7Z"/></g>
+<g stroke="#fff0db" stroke-width="3"><path d="m93 115 1 7m68-7-1 7m-69 20 1 7m70-7-1 7"/></g>
+<path d="m128 124-9 28 9 6 9-6Zm-47 31 20 8-3 10-16-9Zm94 0-20 8 3 10 16-9ZM114 184h28l-3 16-11 12-11-12Z" fill="#171018"/>
+<path d="M99 173q29 22 58-2-28 35-58 2Z" fill="#170e16"/><path d="m108 177 39-1-8 7-22 1Z" fill="#fff0db"/>
+<path class="slash" d="M24 229 232 24" fill="none" stroke="#ff8296" stroke-width="3"/>
+</svg>
