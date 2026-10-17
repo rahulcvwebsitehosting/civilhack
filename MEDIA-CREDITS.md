@@ -1,49 +1,42 @@
-# Character cinema assets
+# Character media credits
 
-The site bundles short character excerpts locally so playback does not depend on a third-party iframe, login, or soundboard. The anime and characters belong to their respective Jujutsu Kaisen rights holders; these are fan-site excerpts, not original animation or licensed official promotional assets. The Gojo and Sukuna cinematics use 1920×1080 excerpts; the short technique loops retain their available source-native resolutions (320–640 pixels wide) without artificial upscaling. The original high-resolution illustrated posters remain as loading/error fallbacks.
+## Current shipped clips
 
-| Character | Video source | Individual voice source |
-| --- | --- | --- |
-| Gojo / Unlimited Void | [Tenor](https://tenor.com/view/unlimited-void-jujutsu-kaisen-gojo-satoru-domain-expansion-gif-18311612088469828438) | [English dub excerpt](https://www.youtube.com/watch?v=2W5KS5-ZXWQ) |
-| Megumi / Chimera Shadow Garden | [Tenor](https://tenor.com/view/megumi-jujutsu-kaisen-gif-21011126) | [English dub excerpt](https://www.youtube.com/watch?v=PybMM91VTC8) |
-| Nobara / Resonance | [Tenor](https://tenor.com/view/nobara-nobara-kugisaki-kugisaki-resonance-straw-doll-technique-gif-7223643587760058076) | [English dub excerpt](https://www.youtube.com/watch?v=MQCz4Hg99S0) |
-| Yuji / Black Flash | [Tenor](https://tenor.com/view/jujutsu-kaisen-black-flash-yuji-itadori-gif-20457368) | [English dub excerpt](https://www.youtube.com/watch?v=pUPd-bHWVUA) |
-| Sukuna / Malevolent Shrine | [Crunchyroll Dubs: Domain Expansion!](https://www.youtube.com/watch?v=vmrBXvlUHb0) | [English dub excerpt](https://www.youtube.com/watch?v=vmrBXvlUHb0) |
+The active player uses only `*-synced.mp4` files. Each file contains H.264 video and its matching AAC soundtrack, cut together from the same source. The focused cuts include the call, formation and reveal; extended commentary and fight aftermath are excluded.
 
-The additional opening cinematic, `gojo-cinema.mp4`, is a [1080p Gojo excerpt, 00:00–00:13](https://www.youtube.com/watch?v=nmvkhLz8t7I).
+| Character technique | Source | Source interval | Audio |
+| --- | --- | --- | --- |
+| Unlimited Void | [Source excerpt](https://www.youtube.com/watch?v=WR8CG04EPKM) | 139.2–154.8s | English |
+| Malevolent Shrine | [Source excerpt](https://www.youtube.com/watch?v=vmrBXvlUHb0) | 61.7–76.3s | English |
+| Chimera Shadow Garden | [Source excerpt](https://www.youtube.com/watch?v=PybMM91VTC8) | 15.8–25.6s | English |
+| Coffin of the Iron Mountain | [Source excerpt](https://www.youtube.com/watch?v=WR8CG04EPKM) | 104.7–116.0s | English |
+| Self-Embodiment of Perfection | [Source excerpt](https://www.youtube.com/watch?v=CkdkJA483Bg) | 4.7–10.5s | English |
+| Horizon of the Captivating Skandha | [Source excerpt](https://www.youtube.com/watch?v=0vMyzf7O-Kw) | 0.2–8.3s | Japanese |
+| Deadly Sentencing | [Source excerpt](https://www.youtube.com/watch?v=LsNH0n5tpdI) | 25.6–37.5s | Japanese |
+| Idle Death Gamble | [Source excerpt](https://www.youtube.com/watch?v=nGErCvPx3QQ) | 0.0–11.1s | Japanese (fan animation) |
+| Resonance | [Source excerpt](https://www.youtube.com/watch?v=3LURkU25248) | 216.0–223.4s | English |
+| Black Flash | [Source excerpt](https://www.youtube.com/watch?v=pUPd-bHWVUA) | 18.4–22.8s | English |
 
-Files live in `public/assets/jjk/media`. All five character voices now use English dub excerpts, with explicit `-en.mp3` filenames to avoid cached Japanese playback. Voices are trimmed to technique calls and normalized to -18 LUFS with a -2 dB true-peak target. Sukuna’s long pause is shortened while preserving the English delivery. Corrected source ranges: Gojo 0–8 s; Megumi 15.1–21.4 s; Nobara 0–7.5 s; Yuji 18.9–21.7 s; Sukuna 61.9–65.4 s + 70.8–75.2 s from the official Crunchyroll Dubs clip, using the same cut for video and audio. The complete technique names are retained. Audio completion controls the entrance duration; pausing visual motion does not disable speech. The main page includes a user-triggered intro voice button. Audio owners prevent arena cleanup from cancelling entrance playback. The 1080p Sukuna scene is shared by his hero, entrance, domain manifestation and technique stage. Nobara uses Resonance and Yuji uses the animated Black Flash technique; the interface does not invent Domain Expansion chants for them. Audio starts only after a release, domain selection, or entry button is pressed. The navigation and arena share one mute control. Video is always muted and pauses when offscreen, in a hidden browser tab, or when energy is paused.
+Deadly Sentencing uses the original Japanese domain call from a replacement source. The previous source had a dialogue-free opening. Nobara now uses the actual Straw Doll Technique / Resonance sequence rather than an unrelated earlier fight passage. Hakari is fan animation by Roy Animeshon, not an official anime scene. The language and fan-animation labels are shown in the interface.
 
-Bangers and Rubik Glitch are self-hosted in `public/assets/fonts` under their accompanying SIL Open Font Licenses. Body and small navigation text keep their readable existing fonts.
+## Playback
 
-## Verification
+- All tracks are encoded together; there is no separately timed MP3 in the current interface.
+- A single foreground clip owns sound. Ambient loops remain muted.
+- Explicit playback offers pause, replay, shared mute and close; Escape also closes a cinematic.
+- Buffering shows a loading state, and browser autoplay restrictions offer a user-gesture retry.
+- Decorative motion can be paused separately; user-requested cinematics remain controllable.
+- Audio is normalized to a -16 LUFS target and -1.5 dB true peak target before AAC encoding.
+- File URLs use a revision query to avoid reusing previous long or quiet clips.
 
-- TypeScript and production build.
-- Browser playback state and changing video time for the opening scene and all five sorcerers.
-- Individual audio playback, shared mute, character changes, and animation pause/resume.
-- Desktop and phone layout; keyboard character tabs. Touch handlers receive horizontal swipe coordinates without cancelling native vertical scrolling.
+## Quality checks
 
-## Additional domains — 17 October 2026
+Reviewed source boundaries and expected duration limits live in `src/data/character-media.json`. Run `npm run media:check` for decode, codec, audio level, stream alignment, duration and fast-start checks. Media decoding and nonzero levels do not, by themselves, prove the dialogue is correct: cuts were also reviewed with source frames and local speech transcription.
 
-The theme selector contains eight actual Domain Expansions. General locations and Black Flash are no longer presented as domains. Nobara and Yuji remain in the separate technique arena.
+## Other assets
 
-| Domain | Video source / excerpt | Voice source |
-| --- | --- | --- |
-| Megumi — Chimera Shadow Garden | Existing credited Megumi clip | Existing English dub |
-| Jogo — Coffin of the Iron Mountain | https://www.youtube.com/watch?v=WR8CG04EPKM (100–114s) | Same English dub excerpt |
-| Mahito — Self-Embodiment of Perfection | https://www.youtube.com/watch?v=CkdkJA483Bg (5–13s) | Same English dub excerpt |
-| Dagon — Horizon of the Captivating Skandha | https://www.youtube.com/watch?v=2aK-_mXT5k0 (0–10s) | https://www.youtube.com/watch?v=MvseqpoO1Q0 (6–16s), English |
-| Higuruma — Deadly Sentencing | https://www.youtube.com/watch?v=xvw93MEmeag (49–61s) | Same English dub excerpt |
-| Hakari — Idle Death Gamble | https://www.youtube.com/watch?v=nGErCvPx3QQ (0–9s), fan animation by Roy Animeshon | Same fan animation's Japanese audio, explicitly labelled |
+Original illustrated posters and extracted source stills provide loading/error fallbacks. Historical short MP4 and MP3 assets remain in the repository but are not requested by the active player. Artwork history is documented in `ARTWORK.md` and `TECHNIQUE-ARTWORK.md`.
 
-Hakari is fan animation, not an official anime scene. Extracted stills supply the corresponding theme posters. The existing `-en.mp3` filename convention is retained for playback compatibility; Hakari's UI accurately identifies Japanese audio. All new voice excerpts are normalized to -18 LUFS, -2 dB true peak.
+Bangers and Rubik Glitch are self-hosted with their accompanying SIL Open Font Licences. The Sukuna-inspired vector favicon is a custom illustration with PNG/ICO fallbacks.
 
-### Complete domain-opening sequences
-
-Updated cuts now cover the domain call, formation and reveal rather than short loops: Gojo 129–168s and Jogo 98–129s from WR8CG04EPKM; Megumi 14–34s from PybMM91VTC8; Mahito 5–21s; Dagon 0–12s from https://www.youtube.com/watch?v=0vMyzf7O-Kw; Higuruma 49–79s; Hakari's entire 12s fan animation; Sukuna 61–80s from vmrBXvlUHb0. Casts and entrance transitions finish on the video-ended event rather than early voice completion. Ambient videos continue looping. Video/audio URLs are versioned to invalidate earlier short clips.
-
-### Synchronized playback — 17 October 2026
-
-All ten characters now use `*-synced.mp4` files with video and AAC audio cut from the **same original scene and timestamps**. Separate soundboard MP3 playback is no longer used by the interface. Both streams share the native video player's buffering, pause, seek and end timeline. Gojo, Sukuna, Megumi, Jogo, Mahito, Higuruma and Hakari retain the full-opening ranges above. Dagon now uses the original scene soundtrack from 0vMyzf7O-Kw rather than overlaying a separate English voice recording; its UI says Original scene audio. Nobara uses the English dub from https://www.youtube.com/watch?v=3LURkU25248 (15–49s), replacing the soundboard/GIF pairing. Yuji uses https://www.youtube.com/watch?v=pUPd-bHWVUA (18–25s). Hakari remains explicitly labelled fan animation / Japanese audio.
-
-The foreground player is exclusive, muted ambient loops cannot acquire sound, and the shared mute changes the actual video track without restarting it. Foreground cinematics are user-initiated; loading and browser gesture fallback controls are included. The domain selector closes when a domain is chosen so the complete cinematic is visible from its beginning.
+Jujutsu Kaisen footage, characters and names belong to their respective rights holders. This unofficial themed college-event project does not claim ownership, official affiliation or a licence to redistribute third-party media. Source links provide attribution, not reuse permission.

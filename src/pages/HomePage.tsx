@@ -23,12 +23,10 @@ export const HomePage: React.FC = () => {
   const entryPoster = activeDomain.id === "hero_sorcerers" ? "/assets/jjk/gojo-infinity-836.webp" : activeDomain.wallpaper;
   const [introPlaying, setIntroPlaying] = useState(false);
   const [voiceError, setVoiceError] = useState(false);
-  const [introRequest, setIntroRequest] = useState(0);
   const playIntro = () => {
     if (!entryClip) return;
     setVoiceError(false);
     if (!introPlaying && !isSoundEnabled()) toggleMute();
-    setIntroRequest(value => value + 1);
     setIntroPlaying(value => !value);
   };
   const enterDomain = () => {
@@ -42,14 +40,14 @@ export const HomePage: React.FC = () => {
   return (
     <div className="domain-home">
       <Navbar />
-      {expanding && <div className={`domain-transition transition-${activeDomain.id}`} role="status">{entryClip && <AnimeVideo clip={entryClip} poster={entryPoster} label={`Entering ${entryName}`} loop={false} audible onComplete={() => navigate("/portal")} />}<div className="transition-barrier barrier-one" aria-hidden="true" /><div className="transition-barrier barrier-two" aria-hidden="true" /><span lang="ja">{entryClip === "sukuna-shrine" ? "伏魔御厨子" : entryClip === "gojo-void" ? "無量空処" : activeDomain.japanese}</span><strong>{entryName}</strong><small>DOMAIN EXPANSION · {activeDomain.user}</small><button className="transition-skip" onClick={() => navigate("/portal")}>SKIP INTRO <ArrowUpRight size={16} /></button></div>}
+      {(expanding || introPlaying) && <div className={`domain-transition transition-${activeDomain.id}`} role="region" aria-label={`${entryName} cinematic`}>{entryClip && <AnimeVideo clip={entryClip} poster={entryPoster} label={`${expanding ? "Entering" : "Previewing"} ${entryName}`} loop={false} audible onFailure={() => setVoiceError(true)} onComplete={() => { if (expanding) navigate("/portal"); else setIntroPlaying(false); }} onInterrupted={() => { setExpanding(false); setIntroPlaying(false); }} />}<div className="transition-barrier barrier-one" aria-hidden="true" /><div className="transition-barrier barrier-two" aria-hidden="true" /><span lang="ja">{entryClip === "sukuna-shrine" ? "伏魔御厨子" : entryClip === "gojo-void" ? "無量空処" : activeDomain.japanese}</span><strong>{entryName}</strong><small>DOMAIN EXPANSION · {activeDomain.user}</small><button className="transition-skip" onClick={() => { if (expanding) navigate("/portal"); else setIntroPlaying(false); }}>{expanding ? "SKIP INTRO" : "CLOSE PREVIEW"} <ArrowUpRight size={16} /></button></div>}
       <main id="main-content">
         <section className="domain-hero" aria-labelledby="hero-title">
           <picture className="domain-hero-art">
             <source type="image/webp" srcSet="/assets/jjk/domain-clash-836.webp 836w, /assets/jjk/domain-clash-1672.webp 1672w" sizes="100vw" />
             <img src="/assets/jjk/domain-clash-master.png" alt="Satoru Gojo and Ryomen Sukuna forming domain expansion hand seals beneath a crimson moon, illustrated in manga ink" width="1672" height="941" fetchPriority="high" />
           </picture>
-          {entryClip && <AnimeVideo key={entryClip} className="hero-anime" clip={entryClip} poster={entryPoster} label={`${entryName} cinematic`} audible={introPlaying && !expanding} playbackKey={introRequest} loop={!introPlaying} onComplete={() => setIntroPlaying(false)} onInterrupted={() => setIntroPlaying(false)} onFailure={() => setVoiceError(true)} />}
+          {entryClip && <AnimeVideo key={entryClip} className="hero-anime" clip={entryClip} poster={entryPoster} label={`${entryName} cinematic`} />}
           <div className="hero-live-tag"><i /> ANIME IN MOTION <span lang="ja">領域展開</span></div>
           <div className="hero-cursed-aura"><TechniqueEnergy technique="black-flash" /></div>
           <div className="hero-ink-wash" aria-hidden="true" />
@@ -61,7 +59,7 @@ export const HomePage: React.FC = () => {
             <p className="hero-description">The curtain falls. Your technique awakens.<br />12 hours. Two battle grounds. One chance to build beyond your limits.</p>
             <div className="hero-actions">
               <button className="seal-button seal-button-red" onClick={enterDomain} disabled={expanding}><span lang="ja" aria-hidden="true">領域</span>{expanding ? "EXPANDING…" : "ENTER THE DOMAIN"}<ArrowUpRight size={20} /></button>
-              {entryClip && <button className="hero-register hero-voice" onClick={playIntro} disabled={expanding} aria-pressed={introPlaying}><Volume2 size={17} />{introPlaying ? "STOP INTRO VOICE" : "PLAY INTRO VOICE"}</button>}
+              {entryClip && <button className="hero-register hero-voice" onClick={playIntro} disabled={expanding} aria-pressed={introPlaying}><Volume2 size={17} />{introPlaying ? "CLOSE DOMAIN CLIP" : "PLAY DOMAIN CLIP"}</button>}
               <Link className="hero-register" to="/register">REGISTER YOUR SQUAD <ArrowUpRight size={17} /></Link>
             </div>
             {voiceError && <p role="status">Voice unavailable. Tap play to retry.</p>}
@@ -76,7 +74,7 @@ export const HomePage: React.FC = () => {
           <div><span className="fact-index">01 / THE DAY</span><strong>15 OCTOBER <em>2026</em></strong><small>Thursday · 8 AM — 8 PM IST</small></div>
           <div><span className="fact-index">02 / THE SQUAD</span><strong>3–4 SORCERERS</strong><small>₹250 per student · food included</small></div>
           <div><span className="fact-index">03 / THE BATTLEFIELD</span><strong>ESEC, PERUNDURAI</strong><small>Erode · Tamil Nadu</small></div>
-          <Link to="/portal#transport" className="fact-transport"><Bus size={24} /><div><strong>41 FREE BUS ROUTES</strong><small>Find your way to the domain</small></div><ArrowUpRight size={22} /></Link>
+          <Link to="/portal#transport" className="fact-transport"><Bus size={24} /><div><strong>41 COLLEGE BUS ROUTES</strong><small>Find your way to the domain</small></div><ArrowUpRight size={22} /></Link>
         </section>
         <CollegeCommunitySection />
         <section id="techniques" className="techniques-section">

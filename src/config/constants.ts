@@ -133,7 +133,7 @@ export const JJK_DOMAIN_THEMES: JJKDomainTheme[] = [
     "glow": "#d3b48033",
     "description": "Enter the courtroom. Judgeman weighs the evidence.",
     "cursedTechnique": "Judgeman",
-    "mediaNote": "English dub"
+    "mediaNote": "Original Japanese dialogue"
   },
   {
     "id": "idle_death_gamble",

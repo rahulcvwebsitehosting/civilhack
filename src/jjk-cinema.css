@@ -115,3 +115,23 @@ html[data-jjk-motion="paused"] .transition-barrier { animation:none; }
 .media-loading,.media-play-prompt{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);padding:14px 20px;background:#160e16e8;color:#fff0db;border:1px solid #eb9287;font:13px/1.5 monospace;text-align:center;max-width:90%}
 .media-play-prompt{cursor:pointer;pointer-events:auto;min-height:44px}.media-play-prompt:focus-visible{outline:3px solid #fff0db;outline-offset:4px}
 .anime-video video[hidden]{display:none}
+.media-controls{position:absolute;z-index:8;right:16px;bottom:16px;display:flex;flex-wrap:wrap;gap:8px;max-width:calc(100% - 32px);pointer-events:auto}
+.media-controls button{min-height:44px;padding:10px 13px;background:#160e16ec;color:#fff0db;border:1px solid #eb9287;font:12px/1.5 monospace;cursor:pointer}
+.media-controls button:hover{background:#49242e}.media-controls button:focus-visible{outline:3px solid #fff0db;outline-offset:3px}
+.domain-transition .media-controls{bottom:85px}
+.technique-stage.is-casting .technique-scene{z-index:3;height:100%;bottom:0}
+.technique-stage.is-casting .technique-stage-copy{animation:none!important;opacity:0!important;visibility:hidden}
+.technique-stage.is-casting .technique-energy{opacity:.18;pointer-events:none}
+.attack-callout{inset:0 0 auto;background:none;align-items:flex-start;justify-content:flex-start;padding:24px;max-height:140px}
+.attack-callout>span{font-size:30px}.attack-callout>strong{font-size:22px;margin-top:8px;text-align:left}.attack-callout i{display:none}
+.domain-transition>.anime-video,.domain-manifestation>.anime-video{z-index:0}
+.domain-transition>span,.domain-transition>strong,.domain-transition>small,.domain-manifestation>span,.domain-manifestation>small{z-index:1;pointer-events:none}
+.domain-transition .transition-skip{z-index:2}
+.domain-transition,.domain-manifestation{z-index:90}
+.domain-transition>.anime-video,.domain-manifestation>.anime-video{opacity:1}
+.domain-transition>.anime-video video,.domain-manifestation>.anime-video video{object-fit:contain;background:#090709}
+.domain-transition>span,.domain-manifestation>span{position:absolute;left:24px;top:24px;font-size:28px;max-width:calc(100% - 48px);text-align:left;animation:none}
+.domain-transition>strong{position:absolute;left:24px;top:64px;font-size:26px;margin:0;text-align:left;max-width:calc(100% - 48px)}
+.domain-transition>small,.domain-manifestation>small{position:absolute;left:24px;top:105px;font-size:10px;line-height:1.5;max-width:calc(100% - 48px);margin:0;text-align:left}
+.domain-manifestation>small{top:70px}.domain-manifestation .manifest-ring{display:none}
+html:not([data-jjk-motion="running"]) .domain-manifestation{display:flex;animation:none}

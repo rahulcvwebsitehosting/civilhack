@@ -1,5 +1,5 @@
 {
-  "name": "react-example",
+  "name": "inno360-jujutsu-chapter",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test": "node --import tsx --test src/utils/characterAudio.test.ts src/utils/characterMedia.test.ts",
+    "media:check": "python scripts/audit-media.py"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
@@ -37,5 +39,7 @@
     "tailwindcss": "^4.3.3",
     "tsx": "^4.21.0",
     "typescript": "^7.0.2"
-  }
+  },
+  "description": "The Inno360 hackathon website by Rahul Shyam \u2014 ESEC meets Jujutsu Kaisen.",
+  "author": "Rahul Shyam"
 }

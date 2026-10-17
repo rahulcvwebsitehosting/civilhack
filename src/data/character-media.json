@@ -1,0 +1,92 @@
+[
+  {
+    "id": "gojo-void",
+    "name": "Unlimited Void",
+    "source": "https://www.youtube.com/watch?v=WR8CG04EPKM",
+    "start": 139.2,
+    "end": 154.8,
+    "language": "English",
+    "maxDuration": 15.8
+  },
+  {
+    "id": "sukuna-shrine",
+    "name": "Malevolent Shrine",
+    "source": "https://www.youtube.com/watch?v=vmrBXvlUHb0",
+    "start": 61.7,
+    "end": 76.3,
+    "language": "English",
+    "maxDuration": 14.8
+  },
+  {
+    "id": "megumi-garden",
+    "name": "Chimera Shadow Garden",
+    "source": "https://www.youtube.com/watch?v=PybMM91VTC8",
+    "start": 15.8,
+    "end": 25.6,
+    "language": "English",
+    "maxDuration": 10.0
+  },
+  {
+    "id": "jogo-mountain",
+    "name": "Coffin of the Iron Mountain",
+    "source": "https://www.youtube.com/watch?v=WR8CG04EPKM",
+    "start": 104.7,
+    "end": 116,
+    "language": "English",
+    "maxDuration": 11.5
+  },
+  {
+    "id": "mahito-perfection",
+    "name": "Self-Embodiment of Perfection",
+    "source": "https://www.youtube.com/watch?v=CkdkJA483Bg",
+    "start": 4.7,
+    "end": 10.5,
+    "language": "English",
+    "maxDuration": 6.0
+  },
+  {
+    "id": "dagon-skandha",
+    "name": "Horizon of the Captivating Skandha",
+    "source": "https://www.youtube.com/watch?v=0vMyzf7O-Kw",
+    "start": 0.2,
+    "end": 8.3,
+    "language": "Japanese",
+    "maxDuration": 8.3
+  },
+  {
+    "id": "higuruma-sentencing",
+    "name": "Deadly Sentencing",
+    "source": "https://www.youtube.com/watch?v=LsNH0n5tpdI",
+    "start": 25.6,
+    "end": 37.5,
+    "language": "Japanese",
+    "maxDuration": 12.1
+  },
+  {
+    "id": "hakari-gamble",
+    "name": "Idle Death Gamble",
+    "source": "https://www.youtube.com/watch?v=nGErCvPx3QQ",
+    "start": 0,
+    "end": 11.1,
+    "language": "Japanese (fan animation)",
+    "maxDuration": 11.3
+  },
+  {
+    "id": "nobara-resonance",
+    "name": "Resonance",
+    "source": "https://www.youtube.com/watch?v=3LURkU25248",
+    "start": 216,
+    "end": 223.4,
+    "language": "English",
+    "maxDuration": 7.6
+  },
+  {
+    "id": "yuji-black-flash",
+    "name": "Black Flash",
+    "source": "https://www.youtube.com/watch?v=pUPd-bHWVUA",
+    "start": 18.4,
+    "end": 22.8,
+    "language": "English",
+    "maxDuration": 4.6
+  }
+]

@@ -215,7 +215,7 @@ export const BusTransportSection: React.FC = () => {
 
                 {/* Via Stops */}
                 <p className="text-xs text-[#bcaea2] mt-1 line-clamp-2">
-                  <span className="text-[#eab6a1] font-medium font-mono text-[11px]">VIA:</span> {route.via}
+                  <span className="text-[#eab6a1] font-medium font-mono text-[11px]">VIA:</span> {route.via.replace(/^via\s+/i, "")}
                 </p>
 
                 {/* Starts At Terminal */}

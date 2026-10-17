@@ -72,7 +72,7 @@ export const TechniqueArena: React.FC<{ initialTechnique?: number }> = ({ initia
       <div className="technique-stage-copy" key={`copy-${active.id}`}><p className="chapter-label">ANIME SEQUENCE / {String(selected + 1).padStart(2, "0")}</p><span className="technique-kanji" lang="ja">{active.japanese}</span><h3>{active.name}</h3><p>{active.description}</p><button className="seal-button seal-button-red" onClick={cast} disabled={casting}><Zap size={18} />{casting ? "CURSED ENERGY UNLEASHED" : "RELEASE + PLAY VOICE"}<ArrowUpRight size={17} /></button></div>
       <button className="arena-sound" onClick={toggleMute} aria-label={sound ? "Mute character voices" : "Enable character voices"}>{sound ? <Volume2 size={17} /> : <VolumeX size={17} />} {sound ? "VOICE ON" : "VOICE OFF"}</button>
       {casting && <div className="attack-callout" aria-hidden="true"><span lang="ja">{active.japanese}</span><strong>{active.name}</strong><i /></div>}
-      <div className="technique-chant" role="status" aria-live="polite">{audioError ? "VOICE UNAVAILABLE · TAP AGAIN TO RETRY" : casting ? active.chant : active.id === "idle_death_gamble" ? "FAN ANIMATION · JAPANESE AUDIO" : active.id === "captivating_skandha" ? "ORIGINAL SCENE AUDIO · VIDEO + SOUND" : "ENGLISH DUB · VIDEO + SOUND"}</div>
+      <div className="technique-chant" role="status" aria-live="polite">{audioError ? "VOICE UNAVAILABLE · TAP AGAIN TO RETRY" : casting ? active.chant : active.id === "idle_death_gamble" ? "FAN ANIMATION · JAPANESE AUDIO" : (active.id === "captivating_skandha" || active.id === "deadly_sentencing") ? "ORIGINAL SCENE AUDIO · VIDEO + SOUND" : "ENGLISH DUB · VIDEO + SOUND"}</div>
       <span className="technique-stage-stamp" aria-hidden="true" lang="ja">呪</span>
     </div>
   </section>;
